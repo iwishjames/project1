@@ -1,0 +1,33 @@
+<div class="signup_form">
+  <div class="signup_form_columnleft">
+  <h3>Create Your Account</h3>
+  <%= form_for @user do |f| %>
+    <div class="firstname_line">
+      <%= f.label :first_name, "Name"%><span class="required_red">*</span>
+      <%= f.text_field :first_name, autofocus: true, required: true, placeholder: "Sona" %>
+    </div>
+    <div class="lastname_line">
+      <%= f.label :last_name, "Surname" %>
+      <%= f.text_field :last_name, placeholder: "Un" %>
+    </div>
+    <div class="email_line">
+    <%= f.label :email %><span class="required_red">*</span>
+    <%= f.email_field :email, placeholder: "sona@ga.co" %>
+    </div>
+    <%= f.label :role_type, "Role" %><span class="required_red">*</span>
+    <%= f.select(:role_type, options_for_select([['Student', 'Student'], ['Alumni', 'Alumni']])) %>
+
+    <%= f.label :student_class %><span class="required_red">*</span>
+    <%= f.text_field :student_class, required: true, placeholder: "SEI33" %>
+
+    <%= f.label :mentor_class %>
+    <%= f.text_field :mentor_class, placeholder: "SEI33" %>
+
+    <%= f.label :image, "Profile Picture" %>:
+    <%= f.text_field :image, placeholder: "http://..." %>
+
+    <%=f.submit "Sign Up!", class: "signup_button"%>
+  <% end %>
+  </div>
+      <%= image_tag("student.jpg", :alt => "image of student", :height => "528", :align => "top")%>
+</div>
