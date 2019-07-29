@@ -1,0 +1,35 @@
+<div class="signup_form">
+  <div class="logo_head">
+    <%= image_tag("xplogo.png", :alt => "XP logo", :height => "50px") %>
+  </div>
+  <div class="signup_form_columnleft">
+  <h3>Create an Account</h3>
+  <%= form_for @user do |f| %>
+    <div class="firstname_line">
+      <span class="required_red">* </span><%= f.label :first_name, "First Name"%>
+      <%= f.text_field :first_name, autofocus: true, required: true, placeholder: "First Name" %>
+    </div>
+    <div class="lastname_line">
+      <%= f.label :last_name, "Last Name" %>
+      <%= f.text_field :last_name, placeholder: "Last Name" %>
+    </div>
+    <div class="email_line">
+    <span class="required_red">* </span><%= f.label :email %>
+    <%= f.email_field :email, placeholder: "Your Email" %>
+    </div>
+    <span class="required_red">* </span><%= f.label :role_type, "Role" %>
+    <%= f.select(:role_type, options_for_select([['Student', 'Student'], ['Alumni', 'Alumni']])) %>
+
+    <span class="required_red">* </span><%= f.label :student_class %>
+    <%= f.text_field :student_class, required: true, placeholder: "SEI33" %>
+
+    <%= f.label :mentor_class %>
+    <%= f.text_field :mentor_class, placeholder: "SEI33" %>
+
+    <%= f.label :image, "Profile Picture" %>:
+    <%= f.text_field :image, placeholder: "http://..." %>
+
+    <%=f.submit "Sign Up", class: "signup_button"%>
+  <% end %>
+  </div>
+</div>
