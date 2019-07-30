@@ -1,2 +1,39 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Edit User</h1>
+
+<%= form_for @user do |f| %>
+
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+
+  <%= f.label :role_type %>
+  <%= f.select(:role_type, options_for_select([['Student', 'Student'], ['Alumni', 'Alumni']]))%>  
+
+  <%= f.label :student_class %>
+  <%= f.text_field :student_class %>
+
+  <%= f.label :mentor_class %>
+  <%= f.text_field :mentor_class %>
+
+  <%= f.label :start_date %>
+  <%= f.dare_field :start_date %>
+
+  <%= f.label :network_github %>
+  <%= f.text_field :network_github %>
+
+  <%= f.label :network_linkedin %>
+  <%= f.text_field :network_linkedin %>
+
+  <%= f.label :network_twitter %>
+  <%= f.text_field :network_twitter %>
+
+  <%= f.submit "Update profile" %>
+<% end %>

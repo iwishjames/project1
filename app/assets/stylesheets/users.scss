@@ -1,12 +1,38 @@
+* a {
+  color: #017991;
+  // text-decoration: underline;
+}
+
+* a:hover {
+  text-decoration: none;
+}
+
 body {
   background-color: #F8F8F8;
 }
 
 // --- Sign up Page --- //
+.alert_container {
+  width: 743.8px;
+  margin-left: 250px;
+}
+
 .logo_thumb {
   margin: 10px auto;
   width: 710px;
   padding: 10px 0;
+}
+
+.nav_searchbar {
+}
+
+.sticky-top {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.username_nav {
+  margin-left: 220px;
 }
 
 .logo_thumb img {
@@ -20,8 +46,8 @@ body {
 
 .signup_container {
   display: inline-block;
-  width: 350px;
-  height: 500px;
+  width: 366px;
+  height: 560px;
   padding: 20px 5px 20px 20px;
   background-color: white;
   border-top-left-radius: 5px;
@@ -30,13 +56,12 @@ body {
 }
 
 .signup_mainContainer {
-  display: block;
-  width: 714.3px;
-  height: 540px;
+  width: 743.8px;
+  height: 559.5px;
   margin: 0 auto;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 3px 3px 5px RGBA(0, 0, 0, 0.4);
+  box-shadow: 0 3px 10px 1px RGBA(0, 0, 0, 0.2);
 }
 
 
@@ -55,7 +80,7 @@ body {
   margin-bottom: 3px;
 }
 
-.signup_h3 {
+.signup_container h3 {
   margin-bottom: 15px;
   margin-top: 5px;
   font-size: 25px;
@@ -105,6 +130,12 @@ background-color: RGB(242, 59, 74);
 
 .signup_button:active {
 background-color: #c71820;
+}
+
+.signin_text {
+  font-size: 13px;
+  margin-top: 15px;
+  margin-left: 36px;
 }
 
 //// GA Color Palette ////

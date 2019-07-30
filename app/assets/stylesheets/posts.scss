@@ -1,3 +1,84 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// --- GA Fonts ---
+@font-face {
+font-family: 'PFDinTextCompPro';
+src: url('PFDinTextCompPro-Bold.tff') format('truetype');
+src: url('PFDinTextCompPro-Medium.ttf') format('truetype');
+src: url('PFDinTextCompPro-Regular.ttf') format('truetype');
+}
+//Reference https://www.aravin.net/add-custom-fonts-rails-application/
+
+
+
+// --- Posts Page ---
+.nav_bar {
+  background-color: white;
+  padding: 10px 10px;
+}
+
+.GATextNav {
+  font-family: 'PFDinTextCompPro-Bold';
+  font-size: 24px;
+}
+
+
+.nav_logo h1 {
+  display: inline;
+  vertical-align: middle;
+  margin-left: 5px;
+  font-size: 30px;
+  font-family: 'PFDinTextCompPro-Bold';
+}
+
+.nav_user {
+margin-right: 8px;
+border-radius: 50%;
+width:45px;
+height:45px;
+object-fit: cover;
+object-position: center;
+}
+
+.nav_button {
+color: black;
+background-color: white;
+border: none;
+}
+
+.nav_button:hover {
+background-color: #F8F8F8;
+color: black;
+}
+
+.nav_button:active {
+  color: black;
+  background-color: #F8F8F8;
+  border:none;
+}
+
+.nav_dropdown {
+  text-decoration: none;
+}
+
+.nav_dropdown:active {
+  background-color: #c71820;
+}
+
+.nav_logo {
+  display: inline;
+}
+.nav_search {
+  display: inline;
+  margin-left: 10px;
+}
+
+.nav_logo img {
+  transition: 1s ease-in-out;
+}
+.nav_logo img:hover {
+  transition: 1s ease-in-out;
+  transform: rotate(90deg);
+}
