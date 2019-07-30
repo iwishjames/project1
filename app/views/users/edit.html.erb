@@ -15,16 +15,16 @@
   <%= f.text_field :last_name %>
 
   <%= f.label :role_type %>
-  <%= f.select(:role_type, options_for_select([['Student', 'Student'], ['Alumni', 'Alumni']]))%>  
+  <%= f.select(:role_type, options_for_select([['Student', 'Student'], ['Alumni', 'Alumni']]))%>
 
   <%= f.label :student_class %>
   <%= f.text_field :student_class %>
 
-  <%= f.label :mentor_class %>
+  <%= f.label :mentor_class, "Mentoring Class" %>
   <%= f.text_field :mentor_class %>
 
   <%= f.label :start_date %>
-  <%= f.dare_field :start_date %>
+  <%= f.date_field :start_date %>
 
   <%= f.label :network_github %>
   <%= f.text_field :network_github %>

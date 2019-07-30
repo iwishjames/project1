@@ -18,6 +18,7 @@
 #  updated_at       :datetime         not null
 #  password_digest  :string
 #  role_type        :string
+#  admin            :boolean          default(FALSE)
 #
 
 class User < ApplicationRecord
