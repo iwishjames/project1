@@ -5,7 +5,7 @@
 <div class="signup_mainContainer">
 <div class="signup_container">
 <h3>Create Your Account</h3>
-  <%= form_for @user do |f| %>
+  <%= form_for @user, :html => {:multipart => true} do |f| %>
   <div class="form-row">
     <div class="form-group col-md-5">
       <span class="required_red">* </span><%= f.label :first_name, "First Name"%>
@@ -32,22 +32,22 @@
   </div>
   <div class="form-group">
     <span class="required_red">* </span><%= f.label :role_type, "Role" %>
-    <%= f.select(:role_type, options_for_select([['Student', 'Student'], ['Alumni', 'Alumni']]))%>
+    <%= f.select(:role_type, options_for_select([['Student', 'Student'], ['Alumni', 'Alumni'], ['Staff', 'Staff'], ['Outcomes', 'Outcomes']])) %>
   </div>
 
 <div class="form-row">
   <div class="form-group col-md-5">
     <span class="required_red">* </span><%= f.label :student_class, "My Class" %>
-    <%= f.text_field :student_class, required: true, placeholder: "SEI6", :class => "signup_inputs"  %>
+    <%= f.text_field :student_class, required: true, placeholder: "SEI6", :class => "signup_inputs text_capitalise"  %>
   </div>
   <div class="form-group col-md-5">
     <%= f.label :mentor_class, "Mentoring Class" %>
-    <%= f.text_field :mentor_class, placeholder: "SEI33", :class => "signup_inputs"%>
+    <%= f.text_field :mentor_class, placeholder: "SEI33", :class => "signup_inputs text_capitalise"%>
   </div>
 </div>
 <div class="form-group">
   <%= f.label :image, "Profile Picture" %>
-  <%= f.text_field :image, placeholder: "http://...", :class => "signup_inputs input_width" %>
+  <%= f.cl_image_upload :image %>
 </div>
 <%=f.submit "Sign Up", class: "signup_button"%>
 <% end %>

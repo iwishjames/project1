@@ -1,10 +1,11 @@
 User.destroy_all
 puts "Generating users..."
-u1 = User.create :first_name => "Sona", :last_name => "Unn", :email => "sona@ga.co", :password => 'chicken', :role => "Student", :student_class => "SEI 33", :image => "https://fillmurray.com/100/100", :admin => true
-u2 = User.create :first_name => "Mentor", :last_name => "Doe", :email => "mentor@ga.co", :password => 'chicken', :role => "Mentor", :mentor_class => "SEI 33", :image => "https://fillmurray.com/100/100"
-u3 = User.create :first_name => "Staff", :last_name => "Doe", :email => "staff@ga.co", :password => 'chicken', :role => "Staff", :image => "https://fillmurray.com/100/100"
-u4 = User.create :first_name => "Outcomes", :last_name => "Doe", :email => "outcomes@ga.co", :password => 'chicken', :role => "Outcomes", :image => "https://fillmurray.com/100/100"
-u5 = User.create :first_name => "Pooch", :email => "pooch@ga.co", :password => 'chicken', :role => "Staff", :image => "https://fillmurray.com/100/100"
+u1 = User.create :first_name => "Sona", :last_name => "Unn", :email => "sona@ga.co", :password => 'chicken', :role => "Student", :student_class => "SEI 33", :image => "https://www.fillmurray.com/100/100"
+u2 = User.create :first_name => "Mentor", :last_name => "Doe", :email => "mentor@ga.co", :password => 'chicken', :role => "Alumni", :mentor_class => "SEI 33", :image => "https://www.fillmurray.com/100/100"
+u3 = User.create :first_name => "Staff", :last_name => "Doe", :email => "staff@ga.co", :password => 'chicken', :role => "Staff", :image => "https://www.fillmurray.com/100/100"
+u4 = User.create :first_name => "Outcomes", :last_name => "Doe", :email => "outcomes@ga.co", :password => 'chicken', :role => "Outcomes", :image => "https://www.fillmurray.com/100/100"
+u5 = User.create :first_name => "Pooch", :email => "pooch@ga.co", :password => 'chicken', :role => "Staff", :image => "https://www.fillmurray.com/100/100"
+u6 = User.create :first_name => "Admin", :email => "admin@ga.co", :password => 'chicken', :role => "Student", :student_class => "SEI 0", :image => "https://www.fillmurray.com/100/100", :admin => true
 puts "Done!👌"
 
 Post.destroy_all

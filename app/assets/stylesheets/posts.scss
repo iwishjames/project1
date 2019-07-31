@@ -11,7 +11,9 @@ src: url('PFDinTextCompPro-Regular.ttf') format('truetype');
 }
 //Reference https://www.aravin.net/add-custom-fonts-rails-application/
 
-
+.text_capitalise {
+  text-transform: uppercase;
+}
 
 // --- Posts Page ---
 .nav_bar {

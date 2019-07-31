@@ -1,6 +1,8 @@
 # == Route Map
 #
 #      Prefix Verb   URI Pattern            Controller#Action
+#  posts_edit GET    /posts/edit(.:format)  posts#edit
+#  posts_show GET    /posts/show(.:format)  posts#show
 # session_new GET    /session/new(.:format) session#new
 #  pages_home GET    /pages/home(.:format)  pages#home
 #        root GET    /                      pages#home
@@ -17,6 +19,9 @@
 #             DELETE /login(.:format)       session#destroy
 
 Rails.application.routes.draw do
+  get 'posts/edit'
+  get 'posts/show'
+  get 'posts/index'
   get 'session/new'
   get 'pages/home'
   root :to => 'pages#home'
