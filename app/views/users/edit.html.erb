@@ -18,10 +18,10 @@
   <%= f.select :role_type, [ "Student", "Alumni", "Staff", "Outcomes" ] %>
 
   <%= f.label :student_class %>
-  <%= f.text_field :student_class %>
+  <%= f.text_field :student_class, :class=>"text_capitalise" %>
 
   <%= f.label :mentor_class, "Mentoring Class" %>
-  <%= f.text_field :mentor_class %>
+  <%= f.text_field :mentor_class, :class=>"text_capitalise" %>
 
   <%= f.label :start_date %>
   <%= f.date_field :start_date %>

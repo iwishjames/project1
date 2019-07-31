@@ -25,6 +25,30 @@ body {
   margin-left: 250px;
 }
 
+.alert_ {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
+
 .logo_thumb {
   margin: 10px auto;
   width: 710px;
@@ -165,8 +189,29 @@ background-color: #c71820;
   font-style: italic;
 }
 
+.profile_label {
+  color: #c71820;
+}
 
+.profile_card {
+  margin: 0 auto;
+  margin-top: 20px;
+  box-shadow: 0 3px 10px 1px RGBA(0, 0, 0, 0.2);
+}
 
+.text_align_center {
+  text-align: center;
+}
+
+.profile_name {
+  margin: 15px 0;
+}
+
+.profile_counter {
+  display: block;
+  margin-top: 5px;
+  width: 200px;
+}
 
 //// GA Color Palette ////
 // Source: http://www.studioproba.com/general-assembly-brand-identity#/general-assembly-brand-identity/8exawb5bkrs3s23jqwvtqxln94l16u

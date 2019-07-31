@@ -1,5 +1,6 @@
 <h1>All Users</h1>
 
 <% @users.each do |user| %>
-  <p>first_name: <%= user.first_name %> --- last_name: <%= user.last_name %> --- email: <%= user.email %> --- student_class: <%= user.student_class %> --- mentor_class: <%= user.mentor_class %></p>
+  <p>first_name: <%= user.first_name %> --- last_name: <%= user.last_name %> --- email: <%= user.email %> --- student_class: <%= user.student_class %> --- mentor_class: <%= user.mentor_class %> --- <%= link_to "Edit user", edit_user_path(@user) %> | 
+  <%= link_to "Delete user", @user, :method => 'delete', :data => {:confirm => 'Are you sure?'} %></p>
 <% end %>

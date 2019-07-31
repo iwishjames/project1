@@ -1,9 +1,9 @@
-<div class="card profile_card" style="width: 18rem;">
+<div class="card profile_card" style="width: 25rem;">
   <% if @current_user.image? %>
   <%= cl_image_tag @current_user.image, :class=>"card-img-top"%>
   <% end %>
   <div class="card-body">
-    <h5 class="card-title">
+    <h5 class="card-title text_align_center profile_name">
       <%= @current_user.first_name %>
       <% if @current_user.last_name? %>
       <%= @current_user.last_name %>
@@ -15,10 +15,10 @@
 
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Email: <%= @current_user.email %></li>
-    <li class="list-group-item">Role: <%= @current_user.role_type %></li>
-    <li class="list-group-item">My Class: <%= @current_user.student_class %></li>
-    <li class="list-group-item">My Mentoring Class: <%= @current_user.mentor_class if @current_user.mentor_class.present? %></li>
+    <li class="list-group-item"><span class="profile_label">Email:</span> <%= @current_user.email %></li>
+    <li class="list-group-item"><span class="profile_label">Role:</span> <%= @current_user.role_type %></li>
+    <li class="list-group-item"><span class="profile_label">My Class:</span> <%= @current_user.student_class %></li>
+    <li class="list-group-item"><span class="profile_label">My Mentoring Class:</span> <%= @current_user.mentor_class if @current_user.mentor_class.present? %></li>
     <!-- Github Deets! -->
     <li class="list-group-item">
       <div class="input-group-prepend">
@@ -40,15 +40,38 @@
           </div>
           <a href="https://twitter.com/<%= @current_user.network_twitter if @current_user.network_twitter? %>"><%= @current_user.network_twitter if @current_user.network_twitter.present? %></a></li>
   </ul>
-  <div class="card-body">
+  <div class="card-body text_align_center">
     <%= link_to "Edit details", edit_user_path(@current_user) %>
   --
     <%= link_to "Delete account", @current_user, :method => 'delete', :data => {:confirm => 'Are you sure? If this is your good bye, We are sad to see you leave...Thank you for your contribution to XP! You had made X amount of posts, which had a total of Y comments - your final XP is Z.
     All the best to wherever you go and whatever awesome things you do, we hope to meet you again!'} %>
   </div>
 </div>
-
+<br>
+<br>
 <h2>Your posts.</h2>
-[Show all @current_user.posts]
+<p>[Show all @current_user.posts]</p>
+<p>maybe have background image as sumble weed. But if any posts are in there..then it will be covered up by the post.</p>
 
-maybe have background image as sumble weed. But if any posts are in there..then it will be covered up by the post.
+<% @user.posts.each do |post| %>
+<div class="card">
+  <div class="post_creater">
+   <div class="card-header">
+     <p> post.user_id.image thumbnail</p>
+     <%= post.user_id.first_name %>
+     <%= post.user_id.last_name %> --
+     <%= post.user_id.role_type %>
+     <p>image of coin</p>
+     <p>post.user_id.total_xp</p>
+   </div>
+   <h6 class="card-subtitle mb-2 text-muted"><%= @current_user.role_type %></h6>
+ </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= post.title %></h5>
+    <p class="card-text"><%= post.content %></p>
+    <p class="card-text"><small class="text-muted"><%= post.timestamp %></small></p>
+  </div>
+  <%= link_to image_tag(post.image, :class=> "card-img-top"), post %>
+  <p>x points -- y comments</p>
+</div>
+<% end %>

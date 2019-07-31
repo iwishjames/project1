@@ -6,6 +6,7 @@
 # posts_index GET    /posts/index(.:format)    posts#index
 # session_new GET    /session/new(.:format)    session#new
 #  pages_home GET    /pages/home(.:format)     pages#home
+#  users_show GET    /users/show(.:format)     users#show
 #        root GET    /                         posts#index
 #       users GET    /users(.:format)          users#index
 #             POST   /users(.:format)          users#create

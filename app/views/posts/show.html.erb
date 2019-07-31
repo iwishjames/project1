@@ -13,7 +13,7 @@
 </ul>
 
 
-
+<div>
 <div class="card mb-3">
 <%= image_tag @post.image, :alt => @post.title %>
   <div class="card-body">
@@ -22,8 +22,12 @@
     <p class="card-text"><small class="text-muted">@post.hashtag</small></p>
     <p class="card-text"><small class="text-muted">@post.timestamp</small></p>
     <div class="#">
+      <% if @current_user.present? %>
       <%= link_to "Edit post", edit_post_path(@post) %>
       <%= link_to "Delete post", @post, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+      <% end %>
     </div>
   </div>
+</div>
+<p>comment section below  -- points and comments counter</p>
 </div>

@@ -6,15 +6,21 @@
 <div class="card">
   <div class="post_creater">
    <div class="card-header">
-     <%= @current_user.first_name %><%= @current_user.last_name %>
+     <p> post.user_id.image thumbnail</p>
+     <%= post.user_id.first_name %>
+     <%= post.user_id.last_name %> --
+     <%= post.user_id.role_type %>
+     <p>image of coin</p>
+     <p>post.user_id.total_xp</p>
    </div>
-   <h6 class="card-subtitle mb-2 text-muted"><%= @current_user.role_type %></h6>
+   <h6 class="card-subtitle mb-2 text-muted"><%= post.user_id.role_type %></h6>
  </div>
   <div class="card-body">
-    <h5 class="card-title"><%= link_to post.title %></h5>
+    <h5 class="card-title"><%= post.title %></h5>
     <p class="card-text"><%= post.content %></p>
     <p class="card-text"><small class="text-muted"><%= post.timestamp %></small></p>
   </div>
   <%= link_to image_tag(post.image, :class=> "card-img-top"), post %>
+  <p>x points -- y comments -- <% if post.user_id == @current_user.id %><%= link_to post.edit_post_path %><% end %></p>
 </div>
 <% end %>

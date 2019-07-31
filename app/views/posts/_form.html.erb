@@ -1,9 +1,12 @@
 <%= form_for @post do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, :required => true  %>
   <%= f.label :content %>
-  <%= f.text_field :content %>
+  <%= f.text_field :content, :required => true %>
   <%= f.label :hashtag %>
   <%= f.text_field :hashtag %>
+  <%= f.label :image, "Image attachment" %>
+  <%= f.cl_image_upload :image %>
+  </div>
   <%= f.submit %>
 <% end %>
