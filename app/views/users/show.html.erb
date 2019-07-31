@@ -1,0 +1,54 @@
+<div class="card profile_card" style="width: 18rem;">
+  <% if @current_user.image? %>
+  <%= cl_image_tag @current_user.image, :class=>"card-img-top"%>
+  <% end %>
+  <div class="card-body">
+    <h5 class="card-title">
+      <%= @current_user.first_name %>
+      <% if @current_user.last_name? %>
+      <%= @current_user.last_name %>
+      <% end %><span class="profile_role_styling"> — <%= @current_user.role_type %></span>
+    </h5>
+    <p class="card-text"><span class="bold">Current XP:</span> X</p>
+    <p class="card-text"><span class="bold">Posts to date:</span> Y</p>
+    <p class="card-text"><span class="bold">Comments to date:</span> Z</p>
+
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Email: <%= @current_user.email %></li>
+    <li class="list-group-item">Role: <%= @current_user.role_type %></li>
+    <li class="list-group-item">My Class: <%= @current_user.student_class %></li>
+    <li class="list-group-item">My Mentoring Class: <%= @current_user.mentor_class if @current_user.mentor_class.present? %></li>
+    <!-- Github Deets! -->
+    <li class="list-group-item">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="addon-wrapping">@GitHub</span>
+      </div>
+      <a href="https://github.com/<%= @current_user.network_github if @current_user.network_github.present? %>"><%= @current_user.network_github if @current_user.network_github.present? %></a></li>
+
+      <!-- LinkedIn Deets! -->
+      <li class="list-group-item">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="addon-wrapping">@LinkedIn</span>
+        </div>
+        <a href="https://www.linkedin.com/in/<%= @current_user.network_linkedin if @current_user.network_linkedin.present? %>"><%= @current_user.network_linkedin if @current_user.network_linkedin.present? %></a></li>
+
+        <!-- Twitter Deets! -->
+        <li class="list-group-item">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="addon-wrapping">@Twitter</span>
+          </div>
+          <a href="https://twitter.com/<%= @current_user.network_twitter if @current_user.network_twitter? %>"><%= @current_user.network_twitter if @current_user.network_twitter.present? %></a></li>
+  </ul>
+  <div class="card-body">
+    <%= link_to "Edit details", edit_user_path(@current_user) %>
+  --
+    <%= link_to "Delete account", @current_user, :method => 'delete', :data => {:confirm => 'Are you sure? If this is your good bye, We are sad to see you leave...Thank you for your contribution to XP! You had made X amount of posts, which had a total of Y comments - your final XP is Z.
+    All the best to wherever you go and whatever awesome things you do, we hope to meet you again!'} %>
+  </div>
+</div>
+
+<h2>Your posts.</h2>
+[Show all @current_user.posts]
+
+maybe have background image as sumble weed. But if any posts are in there..then it will be covered up by the post.

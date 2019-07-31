@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     end
     @current_user.update user_params
     @current_user.save
-    redirect_to root_path
+    redirect_to users_show_path
   end
 
   private
