@@ -36,6 +36,7 @@ before_action :check_for_login, :only => [:edit, :update, :new, :create, :index]
     redirect_to root_path
   end
 
+
   private
   def post_params
     params.require(:post).permit(:title, :content, :hashtag, :image, :user_id)

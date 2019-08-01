@@ -11,11 +11,127 @@ src: url('PFDinTextCompPro-Regular.ttf') format('truetype');
 }
 //Reference https://www.aravin.net/add-custom-fonts-rails-application/
 
+.card-header_custom {
+  background-color: white;
+
+}
+
+.badge-color-student {
+  background-color: #c71820;
+  vertical-align: -1px;
+  margin-left: 3px;
+}
+
+.badge-color-alumni {
+  background-color: #182cc7;
+  vertical-align: -1px;
+  margin-left: 3px;
+}
+
+.badge-color-outcomes {
+  background-color: #85e8da;
+  vertical-align: -1px;
+  margin-left: 3px;
+}
+
+.badge-color-staff {
+  background-color: #ffdb00;
+  vertical-align: -1px;
+  margin-left: 3px;
+}
+
+
+.post_rolestyling {
+  // font-style: italic;
+  color: white;
+  font-weight: lighter;
+  font-family: Monaco;
+  font-size: 12px;
+}
+.allposts_header {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #c2c2c2;
+}
+
+.post-header {
+  margin-bottom: 0px;
+  font-size: 1.5em;
+  color: #212529;
+  padding-bottom: 0px;
+
+}
+
+.post_username {
+  font-size: 15px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.time_date {
+  color: #c2c2c2;
+  font-size: 11px;
+  margin-top: 0px;
+}
+
+.date-line {
+  display: block;
+}
+
+.text-alignment1 {
+  display: inline-block;
+  float: left;
+}
+
+.text-alignment2 {
+  display: inline-block;
+  float: right;
+}
+
+
+.allpost_centered {
+  margin: 15px auto;
+  max-width: 700px;
+}
+
+.classmates_highlight {
+  border: solid 2px #c43b41;
+}
+
+.shadow-hover {
+transition: .4s;
+box-shadow: none;
+}
+
+.shadow-hover:hover {
+box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
 .text_capitalise {
   text-transform: uppercase;
 }
 
 // --- Posts Page ---
+
+.post_content {
+  margin-top: 10px;
+  font-size: 21px;
+  font-weight: normal;
+}
+
+.post_image img {
+  max-width: 800px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.helpful_text {
+font-style: italic;
+font-weight: lighter;
+margin-bottom: 0px;
+}
+
 .nav_bar {
   background-color: white;
   padding: 10px 10px;
@@ -26,6 +142,9 @@ src: url('PFDinTextCompPro-Regular.ttf') format('truetype');
   font-size: 24px;
 }
 
+.custom_card_footer {
+  height: 10px;
+}
 
 .nav_logo h1 {
   display: inline;
@@ -40,6 +159,15 @@ margin-right: 8px;
 border-radius: 50%;
 width:45px;
 height:45px;
+object-fit: cover;
+object-position: center;
+}
+
+.post_thumbnail {
+margin-right: 4px;
+border-radius: 50%;
+width:32px;
+height:32px;
 object-fit: cover;
 object-position: center;
 }
