@@ -1,26 +1,13 @@
 <h1><%= @post.title %></h1>
 
-
-
-<ul>
-  <li>Title: <%= @post.title %></li>
-  <% if @post.user.present? %>
-    <li>User: <%= link_to @post.user.name, @post.user %></li>
-  <% end %>
-  <li>Year: <%= @post.year %></li>
-  <li>Medium: <%= @post.medium %></li>
-  <li>Style: <%= @post.style %></li>
-</ul>
-
-
 <div>
 <div class="card mb-3">
-<%= image_tag @post.image, :alt => @post.title %>
+<%= cl_image_tag @post.image, :alt => @post.title %>
   <div class="card-body">
-    <h5 class="card-title">@post.title</h5>
-    <p class="card-text">@post.content</p>
-    <p class="card-text"><small class="text-muted">@post.hashtag</small></p>
-    <p class="card-text"><small class="text-muted">@post.timestamp</small></p>
+    <h5 class="card-title"> <%=@post.title%></h5>
+    <p class="card-text"> <%=@post.content%></p>
+    <p class="card-text"><small class="text-muted"><%=@post.hashtag%></small></p>
+    <p class="card-text"><small class="text-muted"><%=@post.created_at%></small></p>
     <div class="#">
       <% if @current_user.present? %>
       <%= link_to "Edit post", edit_post_path(@post) %>

@@ -17,34 +17,33 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><span class="profile_label">Email:</span> <%= @current_user.email %></li>
     <li class="list-group-item"><span class="profile_label">Role:</span> <%= @current_user.role_type %></li>
-    <li class="list-group-item"><span class="profile_label">My Class:</span> <%= @current_user.student_class %></li>
+    <li class="list-group-item"><span class="profile_label">My Class:</span> <span class="text_capitalise"><%= @current_user.student_class %></span></li>
     <li class="list-group-item"><span class="profile_label">My Mentoring Class:</span> <%= @current_user.mentor_class if @current_user.mentor_class.present? %></li>
     <!-- Github Deets! -->
     <li class="list-group-item">
       <div class="input-group-prepend">
         <span class="input-group-text" id="addon-wrapping">@GitHub</span>
       </div>
-      <a href="https://github.com/<%= @current_user.network_github if @current_user.network_github.present? %>"><%= @current_user.network_github if @current_user.network_github.present? %></a></li>
+      <a href="https://github.com/<%= @current_user.network_github if @current_user.network_github.present? %>" target="_blank"><%= @current_user.network_github if @current_user.network_github.present? %></a></li>
 
       <!-- LinkedIn Deets! -->
       <li class="list-group-item">
         <div class="input-group-prepend">
           <span class="input-group-text" id="addon-wrapping">@LinkedIn</span>
         </div>
-        <a href="https://www.linkedin.com/in/<%= @current_user.network_linkedin if @current_user.network_linkedin.present? %>"><%= @current_user.network_linkedin if @current_user.network_linkedin.present? %></a></li>
+        <a href="https://www.linkedin.com/in/<%= @current_user.network_linkedin if @current_user.network_linkedin.present? %>" target="_blank"><%= @current_user.network_linkedin if @current_user.network_linkedin.present? %></a></li>
 
         <!-- Twitter Deets! -->
         <li class="list-group-item">
           <div class="input-group-prepend">
             <span class="input-group-text" id="addon-wrapping">@Twitter</span>
           </div>
-          <a href="https://twitter.com/<%= @current_user.network_twitter if @current_user.network_twitter? %>"><%= @current_user.network_twitter if @current_user.network_twitter.present? %></a></li>
+          <a href="https://twitter.com/<%= @current_user.network_twitter if @current_user.network_twitter? %>" target="_blank",><%= @current_user.network_twitter if @current_user.network_twitter.present? %></a></li>
   </ul>
   <div class="card-body text_align_center">
     <%= link_to "Edit details", edit_user_path(@current_user) %>
   --
-    <%= link_to "Delete account", @current_user, :method => 'delete', :data => {:confirm => 'Are you sure? If this is your good bye, We are sad to see you leave...Thank you for your contribution to XP! You had made X amount of posts, which had a total of Y comments - your final XP is Z.
-    All the best to wherever you go and whatever awesome things you do, we hope to meet you again!'} %>
+    <%= link_to "Delete account", @current_user, :method => 'delete', :data => {:confirm => "Are you sure? \n\nIf this is your good bye, We are sad to see you leave... \n\nThank you for your contribution to XP! You had made X amount of posts, which had a total of Y comments - your final XP is Z. \n\nAll the best to wherever you go and whatever awesome things you do, we hope to meet you again!"} %>
   </div>
 </div>
 <br>
@@ -58,9 +57,9 @@
   <div class="post_creater">
    <div class="card-header">
      <p> post.user_id.image thumbnail</p>
-     <%= post.user_id.first_name %>
-     <%= post.user_id.last_name %> --
-     <%= post.user_id.role_type %>
+     <%= post.user.first_name %>
+     <%= post.user.last_name %> --
+     <%= post.user.role_type %>
      <p>image of coin</p>
      <p>post.user_id.total_xp</p>
    </div>
@@ -69,7 +68,7 @@
   <div class="card-body">
     <h5 class="card-title"><%= post.title %></h5>
     <p class="card-text"><%= post.content %></p>
-    <p class="card-text"><small class="text-muted"><%= post.timestamp %></small></p>
+    <p class="card-text"><small class="text-muted"><%= post.created_at %></small></p>
   </div>
   <%= link_to image_tag(post.image, :class=> "card-img-top"), post %>
   <p>x points -- y comments</p>

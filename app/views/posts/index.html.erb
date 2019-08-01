@@ -1,26 +1,30 @@
-<!-- POSTS HOME PAGE!! -->
 <h1>All Posts</h1>
 
-<% @posts.each do |post| %>
 
+<% @posts.each do |post| %>
 <div class="card">
-  <div class="post_creater">
-   <div class="card-header">
-     <p> post.user_id.image thumbnail</p>
-     <%= post.user_id.first_name %>
-     <%= post.user_id.last_name %> --
-     <%= post.user_id.role_type %>
-     <p>image of coin</p>
-     <p>post.user_id.total_xp</p>
+    <div class="post_creater">
+     <div class="card-header">
+       <p> post.user.image thumbnail</p>
+       <%= post.user.first_name %>
+       <%= post.user.last_name %>
+       <%= post.user.role_type %>
+       <p>image of coin</p>
+       <p>post.user.total_xp</p>
+     </div>
+     <h6 class="card-subtitle mb-2 text-muted"><%= post.user.role_type %></h6>
    </div>
-   <h6 class="card-subtitle mb-2 text-muted"><%= post.user_id.role_type %></h6>
- </div>
-  <div class="card-body">
-    <h5 class="card-title"><%= post.title %></h5>
-    <p class="card-text"><%= post.content %></p>
-    <p class="card-text"><small class="text-muted"><%= post.timestamp %></small></p>
+    <div class="card-body">
+      <h5 class="card-title"><%= post.title %></h5>
+      <p class="card-text"><%= post.content %></p>
+
+    </div>
+    <%= link_to image_tag(post.image, :class=> "card-img-top"), post %>
+    <p>x points -- y comments -- </p>
+    <% if post.user_id == @current_user.id %>
+      <p>
+        <%= link_to "Edit Post", edit_post_path(post.id) %>
+      </p>
+    <% end %>
   </div>
-  <%= link_to image_tag(post.image, :class=> "card-img-top"), post %>
-  <p>x points -- y comments -- <% if post.user_id == @current_user.id %><%= link_to post.edit_post_path %><% end %></p>
-</div>
 <% end %>
