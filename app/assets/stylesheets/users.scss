@@ -173,6 +173,18 @@ background-color: #c71820;
 
 // -- Profile Page --
 
+.badge_user_show {
+  margin-left: 150px;
+  margin-bottom: 20px;
+}
+
+.linked_apart {
+  margin: 0 auto;
+}
+
+.profile_image {
+  object-fit: cover;
+}
 .profile_role_styling {
   font-style: italic;
   color: #ced4da;
@@ -180,6 +192,33 @@ background-color: #c71820;
   font-family: monospace;
   font-size: 18px;
 }
+
+.network_key {
+  display:inline-block;
+}
+
+.network_siders {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  z-index: -1;
+  margin-left: -8px;
+}
+
+.network-siders a {
+  padding-left: 20px;
+}
+
+.network_sides_main {
+  display:inline-block;
+  border: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  width: 90px;
+  margin-left: 10px;
+}
+
 
 .bold {
   font-weight: bold;

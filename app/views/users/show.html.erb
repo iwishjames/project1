@@ -7,48 +7,56 @@
       <%= @current_user.first_name %>
       <% if @current_user.last_name? %>
       <%= @current_user.last_name %>
-      <% end %><span class="profile_role_styling"> — <%= @current_user.role_type %></span>
+      <% end %>
     </h5>
-    <p class="card-text"><span class="bold">Current XP:</span> X</p>
-    <p class="card-text"><span class="bold">Posts to date:</span> Y</p>
-    <p class="card-text"><span class="bold">Comments to date:</span> Z</p>
+  <span class="post_rolestyling badge badge-secondary badge_user_show
+  <% if @current_user.role_type == "Student" %><%= 'badge-color-student'%><% end %>
+  <% if @current_user.role_type == "Alumni" %><%= 'badge-color-alumni'%><% end %>
+  <% if @current_user.role_type == "Outcomes" %><%= 'badge-color-outcomes'%><% end %>
+  <% if @current_user.role_type == "Staff" %><%= 'badge-color-staff'%><% end %>
+  ">
+  <%= @current_user.role_type %></span>
+
+    <p class="card-text text-center"><span class="bold">Current XP:</span> X </p>
+    <!-- <p class="card-text"><span class="bold">Posts to date:</span> Y</p>
+    <p class="card-text"><span class="bold">Comments to date:</span> Z</p> -->
 
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><span class="profile_label">Email:</span> <%= @current_user.email %></li>
-    <li class="list-group-item"><span class="profile_label">Role:</span> <%= @current_user.role_type %></li>
-    <li class="list-group-item"><span class="profile_label">My Class:</span> <span class="text_capitalise"><%= @current_user.student_class %></span></li>
-    <li class="list-group-item"><span class="profile_label">My Mentoring Class:</span> <%= @current_user.mentor_class if @current_user.mentor_class.present? %></li>
+    <li class="list-group-item text-center"><span class="profile_label">Email:</span> <%= @current_user.email %></li>
+    <li class="list-group-item text-center"><span class="profile_label">Role:</span> <%= @current_user.role_type %></li>
+    <li class="list-group-item text-center"><span class="profile_label">My Class:</span> <span class="text_capitalise"><%= @current_user.student_class %></span></li>
+    <li class="list-group-item text-center"><span class="profile_label">My Mentoring Class:</span> <%= @current_user.mentor_class if @current_user.mentor_class.present? %></li>
     <!-- Github Deets! -->
     <li class="list-group-item">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="addon-wrapping">@GitHub</span>
+        <span class="input-group-text" id="addon-wrapping">GitHub</span>
       </div>
       <a href="https://github.com/<%= @current_user.network_github if @current_user.network_github.present? %>" target="_blank"><%= @current_user.network_github if @current_user.network_github.present? %></a></li>
-
       <!-- LinkedIn Deets! -->
       <li class="list-group-item">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="addon-wrapping">@LinkedIn</span>
+          <span class="input-group-text" id="addon-wrapping">LinkedIn</span>
         </div>
         <a href="https://www.linkedin.com/in/<%= @current_user.network_linkedin if @current_user.network_linkedin.present? %>" target="_blank"><%= @current_user.network_linkedin if @current_user.network_linkedin.present? %></a></li>
 
         <!-- Twitter Deets! -->
         <li class="list-group-item">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="addon-wrapping">@Twitter</span>
+            <span class="input-group-text" id="addon-wrapping">Twitter</span>
           </div>
           <a href="https://twitter.com/<%= @current_user.network_twitter if @current_user.network_twitter? %>" target="_blank",><%= @current_user.network_twitter if @current_user.network_twitter.present? %></a></li>
   </ul>
   <div class="card-body text_align_center">
+        <span class="gared"><%= link_to "Delete account", @current_user, :method => 'delete', :data => {:confirm => "Are you sure? \n\nIf this is your good bye, We are sad to see you leave... \n\nThank you for your contribution to XP! You had made X amount of posts, which had a total of Y comments - your final XP is Z. \n\nAll the best to wherever you go and whatever awesome things you do, we hope to meet you again!"} %></span>
+
+  ·
     <%= link_to "Edit details", edit_user_path(@current_user) %>
-  --
-    <%= link_to "Delete account", @current_user, :method => 'delete', :data => {:confirm => "Are you sure? \n\nIf this is your good bye, We are sad to see you leave... \n\nThank you for your contribution to XP! You had made X amount of posts, which had a total of Y comments - your final XP is Z. \n\nAll the best to wherever you go and whatever awesome things you do, we hope to meet you again!"} %>
   </div>
 </div>
 <br>
 <br>
-<h2>Your posts.</h2>
+<!-- <h2>Your posts.</h2>
 <p>[Show all @current_user.posts]</p>
 <p>maybe have background image as sumble weed. But if any posts are in there..then it will be covered up by the post.</p>
 
@@ -73,4 +81,4 @@
   <%= link_to image_tag(post.image, :class=> "card-img-top"), post %>
   <p>x points -- y comments</p>
 </div>
-<% end %>
+<% end %> -->
