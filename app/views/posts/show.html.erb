@@ -1,25 +1,49 @@
-<h1><%= @post.title %></h1>
-
-<div>
+<div class="post-view-width">
 <div class="card mb-3">
-<%= cl_image_tag @post.image, :alt => @post.title %>
+  <% if @post.image? %>
+    <span class="post_feature"><%= cl_image_tag @post.image, :alt => @post.title %></span>
+  <% end %>
   <div class="card-body">
-    <h5 class="card-title"> <%=@post.title%></h5>
-    <p class="card-text"> <%=@post.content%></p>
-    <p class="card-text"><small class="text-muted"><%=@post.hashtag%></small></p>
-    <p class="card-text"><small class="text-muted"><%=@post.created_at%></small></p>
-    <p class="card-text"><small class="text-muted"><%= button_to 'Point', post_points_path(@post), method: :post %></small></p>
-    <p class="card-text"><small class="text-muted"><p><%= @post.points.count %> <%= (@post.points.count) == 1 ? 'Point' : 'Points'%></p></small></p>
+    <h5 class="card-title font-weight-bold post-header"> <%=@post.title%></h5>
+    <div class="dropdown-divider"></div>
+    <p class="card-text">
+      <small class="text-muted">
+      <span class="time_date">Date created: <%= @post.created_at.strftime("%l:%M %p - %B %e, %Y") %> | </span><span class="time_date">Last updated: <%= @post.updated_at.strftime("%l:%M %p - %B %e, %Y") %></span>
+      </small>
+    </p>
+    <p class="card-text post_show_content"> <%=@post.content%></p>
+    <p class="card-text"><small class="tags-text">Post tags: <span class="italic tags-text"><%=@post.hashtag%></span></small></p>
 
-
-
-    <div class="#">
-      <% if @current_user.present? %>
-      <%= link_to "Edit post", edit_post_path(@post) %>
-      <%= link_to "Delete post", @post, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
-      <% end %>
-    </div>
+<div class="card-footer">
+    <p class="text-center"><% if @current_user != @post.user %>
+    <span class="text-muted">
+    Did you find this post by <u><%= @post.user.first_name %>
+    <% if @post.user.last_name? %>
+    <%= @post.user.last_name.chars.first %></u>
+    <% end %>
+    helpful? Give it some XP!
+    </span>
+    </p>
+      <span>
+        <p class="text-center"><%= button_to 'Award a Point', post_points_path(@post), method: :post, :class=>"btn-warning points_button"%></p>
+        <p class="text-center text-muted">
+          Total XP: <%= @post.points.count %>
+          <%= (@post.points.count) == 1 ? 'Point' : 'Points'%>
+          <% end %>
+        </p>
+        <span class="text-center">
+        <p>
+          <% if @post.user == @current_user %>
+          <span class="gared"><%= link_to "Delete post", @post, :method => 'delete', :data => { :confirm => 'Are you sure?' } %> ·</span>
+          <span><%= link_to "Edit post", edit_post_path(@post) %> </span>
+          <% end %>
+        </p>
+      </span>
+     </span>
   </div>
+
 </div>
-<p>comment section below  -- points and comments counter</p>
+</div>
+</div>
+<!-- <p>comment section below  -- points and comments counter</p> -->
 </div>

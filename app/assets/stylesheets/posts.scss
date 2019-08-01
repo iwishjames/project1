@@ -16,6 +16,22 @@ src: url('PFDinTextCompPro-Regular.ttf') format('truetype');
 
 }
 
+
+.points_button {
+   text-align: center;
+   vertical-align: middle;
+   padding: 0.375rem 0.75rem;
+   color: white;
+   border-radius: 0.25rem;
+   border: none;
+   margin-top: 5px;
+   margin-left: 200px;
+}
+
+.gared a {
+  color: #c71820;
+}
+
 .badge-color-student {
   background-color: #c71820;
   vertical-align: -1px;
@@ -89,6 +105,16 @@ src: url('PFDinTextCompPro-Regular.ttf') format('truetype');
   float: right;
 }
 
+.card-body {
+  padding-bottom: 8px;
+}
+
+.tags-text {
+  color: #ced4da;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
 
 .allpost_centered {
   margin: 15px auto;
@@ -116,7 +142,13 @@ box-shadow: 0 0 11px rgba(33,33,33,.2);
 
 .post_content {
   margin-top: 10px;
-  font-size: 21px;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.post_show_content {
+  margin-top: 10px;
+  font-size: 16px;
   font-weight: normal;
 }
 
@@ -171,6 +203,26 @@ height:32px;
 object-fit: cover;
 object-position: center;
 }
+
+
+// -- VIEW PAGE
+
+.post-view-width {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.post_feature img {
+max-width: 598px;
+height: auto;
+object-fit: cover;
+}
+
+
+
+
+
 
 .nav_button {
 color: black;
