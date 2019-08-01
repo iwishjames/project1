@@ -56,7 +56,7 @@
 <div class="card">
   <div class="post_creater">
    <div class="card-header">
-     <p> post.user_id.image thumbnail</p>
+     <%= post.user_id.image, :class => 'user_thumbnail' %>
      <%= post.user.first_name %>
      <%= post.user.last_name %> --
      <%= post.user.role_type %>

@@ -5,9 +5,13 @@
 <div class="card">
     <div class="post_creater">
      <div class="card-header">
-       <p> post.user.image thumbnail</p>
+       <% if post.user.image? %>
+       <%= post.user.image %>
+       <% end %>
        <%= post.user.first_name %>
-       <%= post.user.last_name %>
+       <% if post.user.last_name? %>
+       <%= post.user.last_name %> --
+       <% end %>
        <%= post.user.role_type %>
        <p>image of coin</p>
        <p>post.user.total_xp</p>
@@ -21,6 +25,7 @@
     </div>
     <%= link_to image_tag(post.image, :class=> "card-img-top"), post %>
     <p>x points -- y comments -- </p>
+    <p><%= post.points.count %> <%= (post.points.count) == 1 ? 'Person' : 'People'%> found this helpful</p>
     <% if post.user_id == @current_user.id %>
       <p>
         <%= link_to "Edit Post", edit_post_path(post.id) %>

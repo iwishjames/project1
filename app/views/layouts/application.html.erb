@@ -35,7 +35,7 @@
             <div class="dropdown">
               <button class="btn btn-danger dropdown-toggle nav_button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <% if @current_user.image? %>
-                <%= cl_image_tag @current_user.image, :alt => "user profile pic", :class=>"nav_user" %>
+                <%= cl_image_tag @current_user.image, :alt => "user profile pic", :class=>"user_thumbnail" %>
                 <% end %>
                      <%= @current_user.first_name %> <% if @current_user.last_name? %><%= @current_user.last_name.chars.first %><% end %>
 

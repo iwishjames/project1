@@ -2,13 +2,14 @@
 #
 #    Prefix Verb   URI Pattern               Controller#Action
 #      root GET    /                         posts#index
+# edit_user GET    /users/edit(.:format)     users#edit
 #     users GET    /users(.:format)          users#index
 #           POST   /users(.:format)          users#create
 #  new_user GET    /users/new(.:format)      users#new
 #      user GET    /users/:id(.:format)      users#show
 #           PATCH  /users/:id(.:format)      users#update
 #           PUT    /users/:id(.:format)      users#update
-# edit_user GET    /users/edit(.:format)     users#edit
+#           DELETE /users/:id(.:format)      users#destroy
 #     posts GET    /posts(.:format)          posts#index
 #           POST   /posts(.:format)          posts#create
 #  new_post GET    /posts/new(.:format)      posts#new
@@ -26,7 +27,9 @@ Rails.application.routes.draw do
   root :to => 'posts#index'
   get '/users/edit' => 'users#edit', :as => :edit_user
   resources :users, :except => [:edit]
-  resources :posts
+  resources :posts do
+    resources :points
+  end
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
