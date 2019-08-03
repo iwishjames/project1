@@ -16,6 +16,11 @@ src: url('PFDinTextCompPro-Regular.ttf') format('truetype');
 
 }
 
+.content-field {
+  width: 500px;
+  height: 300px;
+
+}
 
 .points_button {
    text-align: center;
@@ -110,9 +115,15 @@ src: url('PFDinTextCompPro-Regular.ttf') format('truetype');
 }
 
 .tags-text {
-  color: #ced4da;
+  color: #a1a1a1;
   font-size: 12px;
-  margin-top: 15px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.card_footer_white {
+  background-color: white;
+  padding-bottom: 5px;
 }
 
 

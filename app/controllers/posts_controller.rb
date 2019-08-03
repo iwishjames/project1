@@ -11,10 +11,17 @@ before_action :check_for_login, :only => [:edit, :update, :new, :create, :index]
 
   def create
     @post = Post.create post_params
-    # @post.user_id = @current_user.id
+    if params[:file].present?
+      # Then call Cloudinary's upload method, passing in the file in params
+      req = Cloudinary::Uploader.upload(params[:file])
+      # Using the public_id allows us to use Cloudinary's powerful image
+      # transformation methods.
+      @post.image = req["public_id"]
+      end
     @post.save
     redirect_to @post
   end
+
 
   def edit
     @post = Post.find_by :id=>params[:id]
@@ -22,6 +29,10 @@ before_action :check_for_login, :only => [:edit, :update, :new, :create, :index]
 
   def update
     post = Post.find_by :id=>params[:id]
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      post.image = req["public_id"]
+    end
     post.update post_params
     redirect_to post
   end

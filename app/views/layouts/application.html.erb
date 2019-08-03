@@ -19,19 +19,19 @@
             <div class="nav_logo">
               <%= link_to root_path do %>
               <%= image_tag("xplogo.png", :alt => "XP logo", :height => "50px") %>
-              <h1 class="ga_logotext">GA EXPERIENCE</h1>
+              <!-- <h1 class="ga_logotext">GA EXPERIENCE</h1> -->
               <% end %>
             </div>
           </div>
-          <div class="col-6">
+          <!-- <div class="col-6">
             <div class="nav_search">
               <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
               </form>
             </div>
-          </div>
-          <div class="col">
+          </div> -->
+          <div class="col main-nav">
             <div class="dropdown">
               <button class="btn btn-danger dropdown-toggle nav_button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <% if @current_user.image? %>

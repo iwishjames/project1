@@ -1,29 +1,91 @@
+<div class="card mb-3 profile_card" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4 object_fit_profile_card_image">
+      <% if @current_user.image? %>
+      <%= cl_image_tag @current_user.image, :height=>"200px", :class=>"card-img object_fit_profile_card_image" %>
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body profile_list_spacing">
+        <h5 class="card-title">
+          <%= @current_user.first_name %>
+          <%= @current_user.last_name %>
+        </h5>
+        <span p_list_spacing>
+        <p class="card-text"><span class="badge-warning xp_badge"><span class="bold">Total XP: <%= @current_user.points.count %></span></span></p>
+        <p class="card-text">
+          <small class="text-muted">
+            <span class="profile_label">Total posts:</span> <%= (@current_user.posts.count) == 0 ? 0 : @current_user.posts.count %> |
+            <span class="profile_label">Total Comments:</span> 0
+          </small>
+        </p>
+        <div class="p_list_spacing">
+          <p class="card-text"><span class="profile_label">Role:</span> <%= @current_user.role_type %></p>
+          <p class="card-text"><span class="profile_label">Email:</span> <%= @current_user.email %></p>
+          <p class="card-text">
+            <span class="profile_label">My Class:</span> <span class="text_capitalise"><%= @current_user.student_class %></span>
+            <% if @current_user.mentor_class? %>
+            <span class="profile_label">· Mentoring Class:</span> <%= @current_user.mentor_class %>
+            <% end %>
+          </p>
+        </div>
+        <div class="p_list_spacing">
+        <p class="word_spacing">
+          <% if @current_user.network_github? %>
+          <a href="https://github.com/<%= @current_user.network_github%>" class="bold badge_github xp_badge" target="_blank">GitHub</a>
+          <% else %>
+          <span class="badge_disabled bold xp_badge">GitHub</span>
+          <% end %>
+
+          <% if @current_user.network_linkedin? %>
+          <a href="https://www.linkedin.com/in/<%= @current_user.network_linkedin%>" class="bold badge_linkedin xp_badge" target="_blank">LinkedIn</a>
+          <% else %>
+          <span class="badge_disabled bold xp_badge">LinkedIn</span>
+          <% end %>
+
+          <% if @current_user.network_twitter? %>
+          <a href="https://twitter.com/<%= @current_user.network_twitter%>" class="bold badge_twitter xp_badge" target="_blank">Twitter</a>
+          <% else %>
+          <span class="badge_disabled bold xp_badge">Twitter</span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body text_align_center profile_card_bottom list-group profile_card_line">
+        <!-- <span class="gared"><%= link_to "Delete account", @current_user, :method => 'delete', :data => {:confirm => "Are you sure? \n\nIf this is your good bye, We are sad to see you leave... \n\nThank you for your contribution to XP! You had made X amount of posts, which had a total of Y comments - your final XP is Z. \n\nAll the best to wherever you go and whatever awesome things you do, we hope to meet you again!"} %></span> -->
+  <%# · %>
+    <%= link_to "Edit details", edit_user_path(@current_user) %>
+
+</div>
+</div>
+
+
+
+
+
 <div class="card profile_card" style="width: 25rem;">
   <% if @current_user.image? %>
   <%= cl_image_tag @current_user.image, :class=>"card-img-top"%>
   <% end %>
-  <div class="card-body">
+  <div class="card-body profile_card_top">
     <h5 class="card-title text_align_center profile_name">
       <%= @current_user.first_name %>
       <% if @current_user.last_name? %>
       <%= @current_user.last_name %>
       <% end %>
     </h5>
-  <span class="post_rolestyling badge badge-secondary badge_user_show
-  <% if @current_user.role_type == "Student" %><%= 'badge-color-student'%><% end %>
-  <% if @current_user.role_type == "Alumni" %><%= 'badge-color-alumni'%><% end %>
-  <% if @current_user.role_type == "Outcomes" %><%= 'badge-color-outcomes'%><% end %>
-  <% if @current_user.role_type == "Staff" %><%= 'badge-color-staff'%><% end %>
-  ">
-  <%= @current_user.role_type %></span>
 
-    <p class="card-text text-center"><span class="bold">Current XP:</span> X </p>
+    <p class="card-text text-center "><span class="badge-warning xp_badge"><span class="bold">Total XP:</span><span class="points-color"> 20</span></span></p>
     <!-- <p class="card-text"><span class="bold">Posts to date:</span> Y</p>
     <p class="card-text"><span class="bold">Comments to date:</span> Z</p> -->
 
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item text-center"><span class="profile_label">Email:</span> <%= @current_user.email %></li>
+    <li class="list-group-item text-center">
+      <p><span class="profile_label">Email:</span> <%= @current_user.email %></p>
+      <p><span class="profile_label">Role:</span> <%= @current_user.role_type %></p>
+    </li>
     <li class="list-group-item text-center"><span class="profile_label">Role:</span> <%= @current_user.role_type %></li>
     <li class="list-group-item text-center"><span class="profile_label">My Class:</span> <span class="text_capitalise"><%= @current_user.student_class %></span></li>
     <li class="list-group-item text-center"><span class="profile_label">My Mentoring Class:</span> <%= @current_user.mentor_class if @current_user.mentor_class.present? %></li>
@@ -47,10 +109,9 @@
           </div>
           <a href="https://twitter.com/<%= @current_user.network_twitter if @current_user.network_twitter? %>" target="_blank",><%= @current_user.network_twitter if @current_user.network_twitter.present? %></a></li>
   </ul>
-  <div class="card-body text_align_center">
-        <span class="gared"><%= link_to "Delete account", @current_user, :method => 'delete', :data => {:confirm => "Are you sure? \n\nIf this is your good bye, We are sad to see you leave... \n\nThank you for your contribution to XP! You had made X amount of posts, which had a total of Y comments - your final XP is Z. \n\nAll the best to wherever you go and whatever awesome things you do, we hope to meet you again!"} %></span>
-
-  ·
+  <div class="card-body text_align_center profile_card_bottom">
+        <!-- <span class="gared"><%= link_to "Delete account", @current_user, :method => 'delete', :data => {:confirm => "Are you sure? \n\nIf this is your good bye, We are sad to see you leave... \n\nThank you for your contribution to XP! You had made X amount of posts, which had a total of Y comments - your final XP is Z. \n\nAll the best to wherever you go and whatever awesome things you do, we hope to meet you again!"} %></span> -->
+  <%# · %>
     <%= link_to "Edit details", edit_user_path(@current_user) %>
   </div>
 </div>
@@ -78,7 +139,7 @@
     <p class="card-text"><%= post.content %></p>
     <p class="card-text"><small class="text-muted"><%= post.created_at %></small></p>
   </div>
-  <%= link_to image_tag(post.image, :class=> "card-img-top"), post %>
+  <%= link_to cl_image_tag(post.image, :class=> "card-img-top"), post %>
   <p>x points -- y comments</p>
 </div>
 <% end %> -->

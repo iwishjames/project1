@@ -1,0 +1,51 @@
+<div class="card profile_card" style="width: 25rem;">
+  <% if @current_user.image? %>
+  <%= cl_image_tag @current_user.image, :class=>"card-img-top"%>
+  <% end %>
+  <div class="card-body profile_card_top">
+    <h5 class="card-title text_align_center profile_name">
+      <%= @current_user.first_name %>
+      <% if @current_user.last_name? %>
+      <%= @current_user.last_name %>
+      <% end %>
+    </h5>
+
+    <p class="card-text text-center "><span class="badge-warning xp_badge"><span class="bold">Total XP:</span><span class="points-color"> 20</span></span></p>
+    <!-- <p class="card-text"><span class="bold">Posts to date:</span> Y</p>
+    <p class="card-text"><span class="bold">Comments to date:</span> Z</p> -->
+
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item text-center">
+      <p><span class="profile_label">Email:</span> <%= @current_user.email %></p>
+      <p><span class="profile_label">Role:</span> <%= @current_user.role_type %></p>
+    </li>
+    <li class="list-group-item text-center"><span class="profile_label">Role:</span> <%= @current_user.role_type %></li>
+    <li class="list-group-item text-center"><span class="profile_label">My Class:</span> <span class="text_capitalise"><%= @current_user.student_class %></span></li>
+    <li class="list-group-item text-center"><span class="profile_label">My Mentoring Class:</span> <%= @current_user.mentor_class if @current_user.mentor_class.present? %></li>
+    <!-- Github Deets! -->
+    <li class="list-group-item">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="addon-wrapping">GitHub</span>
+      </div>
+      <a href="https://github.com/<%= @current_user.network_github if @current_user.network_github.present? %>" target="_blank"><%= @current_user.network_github if @current_user.network_github.present? %></a></li>
+      <!-- LinkedIn Deets! -->
+      <li class="list-group-item">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="addon-wrapping">LinkedIn</span>
+        </div>
+        <a href="https://www.linkedin.com/in/<%= @current_user.network_linkedin if @current_user.network_linkedin.present? %>" target="_blank"><%= @current_user.network_linkedin if @current_user.network_linkedin.present? %></a></li>
+
+        <!-- Twitter Deets! -->
+        <li class="list-group-item">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="addon-wrapping">Twitter</span>
+          </div>
+          <a href="https://twitter.com/<%= @current_user.network_twitter if @current_user.network_twitter? %>" target="_blank",><%= @current_user.network_twitter if @current_user.network_twitter.present? %></a></li>
+  </ul>
+  <div class="card-body text_align_center profile_card_bottom">
+        <!-- <span class="gared"><%= link_to "Delete account", @current_user, :method => 'delete', :data => {:confirm => "Are you sure? \n\nIf this is your good bye, We are sad to see you leave... \n\nThank you for your contribution to XP! You had made X amount of posts, which had a total of Y comments - your final XP is Z. \n\nAll the best to wherever you go and whatever awesome things you do, we hope to meet you again!"} %></span> -->
+  <%# · %>
+    <%= link_to "Edit details", edit_user_path(@current_user) %>
+  </div>
+</div>

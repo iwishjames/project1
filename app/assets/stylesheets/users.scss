@@ -78,7 +78,7 @@ body {
 
 .signup_container {
   display: inline-block;
-  width: 366px;
+  width: 374px;
   height: 560px;
   padding: 20px 5px 20px 20px;
   background-color: white;
@@ -88,8 +88,8 @@ body {
 }
 
 .signup_mainContainer {
-  width: 743.8px;
-  height: 559.5px;
+  width: 752px;
+  height: 400px;
   margin: 0 auto;
   background-color: white;
   border-radius: 5px;
@@ -131,17 +131,25 @@ body {
   width: 83%;
 }
 
+
+.card-img-overlay {
+display: inline-block;
+}
+
 .signup_container select {
-  display: block;
-  height: calc(1.5em + 0.75rem + 2px);
-  width: 83%;
-  padding: 0.375rem 0.75rem;
+  display: inline-block;
+  height: 700;
+  width: 70%;
+  padding: 0.375rem 0.65rem;
   color: #495057;
   background-color: #fff;
   border: solid 1px #ced4da;
   border-radius: 0.25rem;
 }
 
+.main-nav {
+  margin-left: 740px;
+}
  .signup_button {
   background-color: #e51b24;
   display: inline-block;
@@ -219,6 +227,14 @@ background-color: #c71820;
   margin-left: 10px;
 }
 
+.xp_badge {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.points-color {
+  color: white;
+}
 
 .bold {
   font-weight: bold;
@@ -229,13 +245,38 @@ background-color: #c71820;
 }
 
 .profile_label {
-  color: #c71820;
+  color: #8c8c8c;
 }
+
 
 .profile_card {
   margin: 0 auto;
   margin-top: 20px;
   box-shadow: 0 3px 10px 1px RGBA(0, 0, 0, 0.2);
+}
+
+.object_fit_profile_card_image {
+  object-fit: cover;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.p_list_spacing {
+  margin-top: 12px;
+}
+
+.profile_list_spacing p {
+  margin-bottom: 5px;
+}
+
+.profile_card_top {
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+.profile_card_bottom {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .text_align_center {
@@ -250,6 +291,53 @@ background-color: #c71820;
   display: block;
   margin-top: 5px;
   width: 200px;
+}
+
+.badge_disabled {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+.badge_github {
+  background-color: #333;
+  color: white;
+}
+
+.badge_github:hover {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.badge_twitter {
+  background-color: #1DA1F2;
+  color: white;
+}
+
+.badge_twitter:hover {
+  background-color: #178cd4;
+  color: white;
+}
+
+.badge_linkedin {
+  background-color: #0077B5;
+  color: white;
+}
+
+.badge_linkedin:hover {
+  background-color: #005b8a;
+  color: white;
+}
+
+.white {
+  color: white;
+}
+
+.word_spacing {
+  word-spacing: 2px;
+  line-height: 25px;
+}
+
+.profile_card_line {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 //// GA Color Palette ////
