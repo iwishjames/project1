@@ -1,8 +1,8 @@
-<div class="card mb-3 profile_card" style="max-width: 540px;">
+<div class="card mb-3 profile_card" style="max-width: 600px;">
   <div class="row no-gutters">
-    <div class="col-md-4 object_fit_profile_card_image">
+    <div class="col-md-4">
       <% if @current_user.image? %>
-      <%= cl_image_tag @current_user.image, :height=>"200px", :class=>"card-img object_fit_profile_card_image" %>
+      <%= cl_image_tag @current_user.image, :height=>"265px", :class=>"card-img object_fit_profile_card_image" %>
       <% end %>
     </div>
     <div class="col-md-8">
@@ -56,90 +56,67 @@
         <!-- <span class="gared"><%= link_to "Delete account", @current_user, :method => 'delete', :data => {:confirm => "Are you sure? \n\nIf this is your good bye, We are sad to see you leave... \n\nThank you for your contribution to XP! You had made X amount of posts, which had a total of Y comments - your final XP is Z. \n\nAll the best to wherever you go and whatever awesome things you do, we hope to meet you again!"} %></span> -->
   <%# · %>
     <%= link_to "Edit details", edit_user_path(@current_user) %>
-
 </div>
 </div>
 
-
-
-
-
-<div class="card profile_card" style="width: 25rem;">
-  <% if @current_user.image? %>
-  <%= cl_image_tag @current_user.image, :class=>"card-img-top"%>
-  <% end %>
-  <div class="card-body profile_card_top">
-    <h5 class="card-title text_align_center profile_name">
-      <%= @current_user.first_name %>
-      <% if @current_user.last_name? %>
-      <%= @current_user.last_name %>
-      <% end %>
-    </h5>
-
-    <p class="card-text text-center "><span class="badge-warning xp_badge"><span class="bold">Total XP:</span><span class="points-color"> 20</span></span></p>
-    <!-- <p class="card-text"><span class="bold">Posts to date:</span> Y</p>
-    <p class="card-text"><span class="bold">Comments to date:</span> Z</p> -->
-
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item text-center">
-      <p><span class="profile_label">Email:</span> <%= @current_user.email %></p>
-      <p><span class="profile_label">Role:</span> <%= @current_user.role_type %></p>
-    </li>
-    <li class="list-group-item text-center"><span class="profile_label">Role:</span> <%= @current_user.role_type %></li>
-    <li class="list-group-item text-center"><span class="profile_label">My Class:</span> <span class="text_capitalise"><%= @current_user.student_class %></span></li>
-    <li class="list-group-item text-center"><span class="profile_label">My Mentoring Class:</span> <%= @current_user.mentor_class if @current_user.mentor_class.present? %></li>
-    <!-- Github Deets! -->
-    <li class="list-group-item">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="addon-wrapping">GitHub</span>
-      </div>
-      <a href="https://github.com/<%= @current_user.network_github if @current_user.network_github.present? %>" target="_blank"><%= @current_user.network_github if @current_user.network_github.present? %></a></li>
-      <!-- LinkedIn Deets! -->
-      <li class="list-group-item">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="addon-wrapping">LinkedIn</span>
-        </div>
-        <a href="https://www.linkedin.com/in/<%= @current_user.network_linkedin if @current_user.network_linkedin.present? %>" target="_blank"><%= @current_user.network_linkedin if @current_user.network_linkedin.present? %></a></li>
-
-        <!-- Twitter Deets! -->
-        <li class="list-group-item">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="addon-wrapping">Twitter</span>
-          </div>
-          <a href="https://twitter.com/<%= @current_user.network_twitter if @current_user.network_twitter? %>" target="_blank",><%= @current_user.network_twitter if @current_user.network_twitter.present? %></a></li>
-  </ul>
-  <div class="card-body text_align_center profile_card_bottom">
-        <!-- <span class="gared"><%= link_to "Delete account", @current_user, :method => 'delete', :data => {:confirm => "Are you sure? \n\nIf this is your good bye, We are sad to see you leave... \n\nThank you for your contribution to XP! You had made X amount of posts, which had a total of Y comments - your final XP is Z. \n\nAll the best to wherever you go and whatever awesome things you do, we hope to meet you again!"} %></span> -->
-  <%# · %>
-    <%= link_to "Edit details", edit_user_path(@current_user) %>
-  </div>
-</div>
 <br>
-<br>
-<!-- <h2>Your posts.</h2>
-<p>[Show all @current_user.posts]</p>
-<p>maybe have background image as sumble weed. But if any posts are in there..then it will be covered up by the post.</p>
-
+<h1 class="allposts_header">My Posts</h1>
+<!-- <p>maybe have background image as sumble weed. But if any posts are in there..then it will be covered up by the post.</p> -->
 <% @user.posts.each do |post| %>
-<div class="card">
-  <div class="post_creater">
-   <div class="card-header">
-     <span class="post_thumbnail"></span><%= post.user.image %>
-     <%= post.user.first_name %>
-     <%= post.user.last_name %> --
-     <%= post.user.role_type %>
-     <p>image of coin</p>
-     <p>post.user_id.total_xp</p>
+<div class="card allpost_centered shadow-hover rounded-0
+">
+   <div class="card-header card-header_custom rounded-0">
+     <h5 class="post-header font-weight-bold">
+     <%= post.title %></h5>
    </div>
-   <h6 class="card-subtitle mb-2 text-muted"><%= @current_user.role_type %></h6>
- </div>
   <div class="card-body">
-    <h5 class="card-title"><%= post.title %></h5>
-    <p class="card-text"><%= post.content %></p>
-    <p class="card-text"><small class="text-muted"><%= post.created_at %></small></p>
+    <% if post.user.image? %>
+    <%= cl_image_tag post.user.image, :alt => "user profile pic", :class=>"post_thumbnail" %>
+    <% end %>
+    <span class="post_username">
+    <%= post.user.first_name.capitalize %>
+    <% if post.user.last_name? %>
+    <%= post.user.last_name.chars.first.capitalize %>
+    <% end %>
+    </span>
+    <span class="post_rolestyling badge badge-secondary
+    <% if post.user.role_type == "Student" %><%= 'badge-color-student'%><% end %>
+    <% if post.user.role_type == "Alumni" %><%= 'badge-color-alumni'%><% end %>
+    <% if post.user.role_type == "Outcomes" %><%= 'badge-color-outcomes'%><% end %>
+    <% if post.user.role_type == "Staff" %><%= 'badge-color-staff'%><% end %>
+    ">
+    <%= post.user.role_type %></span>
+    <% if post.points.count > 0 %>
+    <span class="time_date"><%= post.points.count %> <%= (post.points.count) == 1 ? 'point' : 'points'%></span>
+    <% end %>
+    <p></p>
+    <div><span class="time_date">Date created: <%= post.created_at.strftime("%l:%M %p - %B %e, %Y") %> | </span><span class="time_date">Last updated: <%= post.updated_at.strftime("%l:%M %p - %B %e, %Y") %></span>
+    </div>
+    <p class="card-text post_content"><%= truncate(post.content, length: 280) %></p>
+    <% if post.image? %>
+    <span class="post_image"><%= link_to cl_image_tag(post.image, :class=> "card-img-top"), post %></span>
+    <% end %>
+    <% if post.hashtag? %>
+    <p class="tags-text">Post tags: <span class="italic tags-text"><%= post.hashtag %></span></p>
+    <% end %>
   </div>
-  <%= link_to cl_image_tag(post.image, :class=> "card-img-top"), post %>
-  <p>x points -- y comments</p>
+  <div class="card-footer card_footer_white">
+    <small class="text-muted rounded-0">
+      <span class="text-alignment1">
+        <% if post.points.count > 0 %>
+          <p class="helpful_text"><%= post.points.count %> <%= (post.points.count) == 1 ? 'person' : 'people'%> found this post helpful!
+        <% end %>
+        </p>
+      </span>
+      <span class="text-alignment2">
+        <p class="custom_card_footer">
+          <% if post.user_id == @current_user.id %>
+          <span><%= link_to "Edit post", edit_post_path(post.id)%> ·</span>
+          <% end %>
+          <%= link_to "View post", post_path(post.id) %>
+        </p>
+     </span>
+  </small>
+  </div>
 </div>
-<% end %> -->
+<% end %>

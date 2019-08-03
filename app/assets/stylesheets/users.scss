@@ -147,9 +147,6 @@ display: inline-block;
   border-radius: 0.25rem;
 }
 
-.main-nav {
-  margin-left: 740px;
-}
  .signup_button {
   background-color: #e51b24;
   display: inline-block;
@@ -259,6 +256,7 @@ background-color: #c71820;
   object-fit: cover;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .p_list_spacing {
@@ -338,6 +336,11 @@ background-color: #c71820;
 
 .profile_card_line {
   border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.login_silly {
+  text-align: center;
+  margin-top: 50px;
 }
 
 //// GA Color Palette ////

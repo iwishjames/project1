@@ -1,9 +1,9 @@
-<div class="post-view-width">
+<div class="post_view_width">
 <div class="card mb-3">
   <% if @post.image? %>
-    <span class="post_feature"><%= cl_image_tag @post.image, :alt => @post.title %></span>
+    <div class="post_feature"><%= cl_image_tag @post.image, :alt => @post.title %></div>
   <% end %>
-  <div class="card-body">
+  <div class="card-body showpost_cardbody">
     <h5 class="card-title font-weight-bold post-header"> <%=@post.title%></h5>
     <div class="dropdown-divider"></div>
     <p class="card-text">
@@ -14,21 +14,19 @@
     <p class="card-text post_show_content"> <%=@post.content%></p>
     <p class="card-text"><small class="tags-text">Post tags: <span class="italic tags-text"><%=@post.hashtag%></span></small></p>
 
-<div class="card-footer">
+<div class="card-footer post_show_cardfooter">
     <p class="text-center"><% if @current_user != @post.user %>
-    <span class="text-muted">
+    <span class="text-muted text_shrink">
     Did you find this post by <u><%= @post.user.first_name %>
-    <% if @post.user.last_name? %>
-    <%= @post.user.last_name.chars.first %></u>
-    <% end %>
+    <%=@post.user.last_name.chars.first%></u>
     helpful? Give it some XP!
     </span>
     </p>
       <span>
-        <p class="text-center"><%= button_to 'Award a Point', post_points_path(@post), method: :post, :class=>"btn-warning points_button"%></p>
-        <p class="text-center text-muted">
-          Total XP: <%= @post.points.count %>
-          <%= (@post.points.count) == 1 ? 'Point' : 'Points'%>
+        <p class="text-center"><%= button_to 'Award Point', post_points_path(@post), method: :post, :class=>"btn-warning points_button"%></p>
+        <p class="text-center text-muted text_shrink">
+          <b>Total Post XP: <%= @post.points.count %>
+          <%= (@post.points.count) == 1 ? 'Point' : 'Points'%></b>
           <% end %>
         </p>
         <span class="text-center">

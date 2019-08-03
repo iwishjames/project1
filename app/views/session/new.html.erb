@@ -1,4 +1,5 @@
-<div class="logo_thumb">
+<% if !@current_user.present? %>
+<div class="logo_thumb nav_logo_spin">
   <%= image_tag("xplogo.png", :alt => "XP logo", :height => "50px") %>
 </div>
 
@@ -26,3 +27,11 @@
 </div>
     <%= image_tag("student.jpg", :alt => "image of student", :height => "560")%>
 </div>
+<% end %>
+
+<% if @current_user.present? %>
+<div class="login_silly">
+<h1>You are already logged in silly!</h1>
+<p>You will need to log out of the current account to view the Sign In page.</p>
+</div>
+<% end %>

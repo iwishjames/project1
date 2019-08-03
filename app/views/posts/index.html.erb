@@ -2,15 +2,28 @@
 
 <% @posts.each do |post| %>
   <div class="card allpost_centered shadow-hover rounded-0
-  <% if post.user.student_class == @current_user.student_class %>
-  <%= "classmates_highlight" %>
-  <% end %>
+  <%# <% if post.user.student_class == @current_user.student_class %>
+  <%# <%= "classmates_highlight" %> %>
+  <%# <% end %> %> %>
   ">
+  <!-- If post from my classmate color red. if post from myself - color yellow! -->
      <div class="card-header card-header_custom rounded-0">
-       <h5 class="post-header font-weight-bold">
+       <% if post.user.student_class == @current_user.student_class && post.user != @current_user %>
+       <span class="classmate_post">
+       <%='.'%>
+       </span>
+       <% end %>
+
+       <% if post.user == @current_user %>
+       <span class="own_post">
+       <%='.'%>
+       </span>
+       <% end %>
+
+       <h5 class="post_header font-weight-bold">
        <%= post.title %></h5>
      </div>
-    <div class="card-body">
+    <div class="card-body card-body_custom">
       <% if post.user.image? %>
       <%= cl_image_tag post.user.image, :alt => "user profile pic", :class=>"post_thumbnail" %>
       <% end %>
@@ -27,8 +40,9 @@
       <% if post.user.role_type == "Staff" %><%= 'badge-color-staff'%><% end %>
       ">
       <%= post.user.role_type %></span>
-      <!-- <p>XP</p> -->
-      <!-- <p>post.user.total_xp</p> -->
+      <% if post.points.count > 0 %>
+      <span class="time_date"><%= post.points.count %> <%= (post.points.count) == 1 ? 'point' : 'points'%></span>
+      <% end %>
       <div><span class="time_date">Date created: <%= post.created_at.strftime("%l:%M %p - %B %e, %Y") %> | </span><span class="time_date">Last updated: <%= post.updated_at.strftime("%l:%M %p - %B %e, %Y") %></span>
       </div>
       <p class="card-text post_content"><%= truncate(post.content, length: 280) %></p>
