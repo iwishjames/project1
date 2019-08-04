@@ -51,3 +51,4 @@ Features
 TO DO!
 - Search functionality!!!!!
 - Comments section
+- Adjust image crop for photo uploads. 

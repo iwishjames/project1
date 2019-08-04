@@ -3,28 +3,28 @@
   <%= image_tag("xplogo.png", :alt => "XP logo", :height => "50px") %>
 </div>
 
-<div class="signup_mainContainer">
+<div class="signup_mainContainer mainContainer_custom">
 <div class="signup_container">
 <h3>Create Your Account</h3>
   <%= form_for @user, :html => {:multipart => true} do |f| %>
   <div class="form-row">
     <div class="form-group col-md-5">
       <span class="required_red">* </span><%= f.label :first_name, "First Name"%>
-      <%= f.text_field :first_name, autofocus: true, required: true, placeholder: "Sona", :class => "signup_inputs" %>
+      <%= f.text_field :first_name, autofocus: true, required: true, placeholder: "First", :class => "signup_inputs" %>
     </div>
     <div class="form-group col-md-5">
       <%= f.label :last_name, "Last Name"%>
-      <%= f.text_field :last_name, placeholder: "Unn", :class => "signup_inputs" %>
+      <%= f.text_field :last_name, placeholder: "Last", :class => "signup_inputs" %>
     </div>
   </div>
   <div class="form-group">
     <span class="required_red">* </span><%= f.label :email %>
-    <%= f.email_field :email, placeholder: "sona@ga.co", :class => "signup_inputs input_width" %>
+    <%= f.email_field :email, placeholder: "user@ga.co", :class => "signup_inputs input_width", required: true %>
   </div>
   <div class="form-row">
     <div class="form-group col-md-5">
       <span class="required_red">* </span><%= f.label :password%>
-      <%= f.password_field :password, :class => "signup_inputs" %>
+      <%= f.password_field :password, :class => "signup_inputs", required: true %>
     </div>
     <div class="form-group col-md-5">
       <%= f.label :password_confirmation %>
@@ -33,13 +33,13 @@
   </div>
   <div class="form-group">
     <span class="required_red">* </span><%= f.label :role_type, "Role" %>
-    <%= f.select(:role_type, options_for_select([['Student', 'Student'], ['Alumni', 'Alumni'], ['Staff', 'Staff'], ['Outcomes', 'Outcomes']])) %>
+    <div class="select_resizing"><%= f.select(:role_type, options_for_select([['Student', 'Student'], ['Alumni', 'Alumni'], ['Staff', 'Staff'], ['Outcomes', 'Outcomes']])) %></div>
   </div>
 
 <div class="form-row">
   <div class="form-group col-md-5">
     <span class="required_red">* </span><%= f.label :student_class, "My Class" %>
-    <%= f.text_field :student_class, required: true, placeholder: "SEI6", :class => "signup_inputs text_capitalise"  %>
+    <%= f.text_field :student_class, required: true, placeholder: "SEI6", :class => "signup_inputs text_capitalise", required: true %>
   </div>
   <div class="form-group col-md-5">
     <%= f.label :mentor_class, "Mentoring Class" %>
@@ -53,8 +53,11 @@
 <%=f.submit "Sign Up", class: "signup_button"%>
 <% end %>
 <p class ="signin_text">Already have an account? <a href="<%=login_path%>">Sign in</a> </p>
-<div class="card bg-dark text-white">
-  <%# <%= image_tag("student.jpg", :alt => "image of student", :height => "560")%>
+</div>
+  <div class="image_container">
+    <%= image_tag("group.jpg", :alt => "image of a group of student")%>
+    <div class="signup_left_small">A community platform based on shared knowledge between the General Assembly.</div>
+  </div>
 </div>
 <% end %>
 

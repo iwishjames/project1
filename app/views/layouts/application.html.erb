@@ -35,7 +35,7 @@
 
           <!-- user navigation -->
           <div class="col main-nav">
-            <div class="nav_bar post_button"><a class="btn btn-outline-success" <%= link_to "New Post", new_post_path %></a></div>
+            <!-- <div class="nav_bar post_button"><a class="btn btn-outline-success" <%= link_to "New Post", new_post_path %></a></div> -->
             <div class="dropdown dropdown_inline">
               <button class="btn btn-danger dropdown-toggle nav_button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <% if @current_user.image? %>
@@ -47,9 +47,9 @@
                 <% if @current_user.admin %>
                   <a class="dropdown-item nav_dropdown" <%= link_to "Admin access", users_path %></a>
                 <% end %>
-                <!-- <a class="dropdown-item nav_dropdown" <%= link_to "Create a post", new_post_path %></a> -->
+                <a class="dropdown-item nav_dropdown" <%= link_to "New Post", new_post_path %></a>
                 <a class="dropdown-item nav_dropdown" <%= link_to "My Profile", user_path(@current_user) %></a>
-                <a class="dropdown-item nav_dropdown" <%= link_to "My Class", user_path(@current_user) %></a>
+                <!-- <a class="dropdown-item nav_dropdown" <%= link_to "My Class", user_path(@current_user) %></a> -->
                 <a class="dropdown-item nav_dropdown" <%= link_to "Edit my Details", edit_user_path %></a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item nav_dropdown" <%= link_to "Log out", login_path, :method => 'delete' %></a>

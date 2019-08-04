@@ -37,6 +37,12 @@ src: url('PFDinTextCompPro-Regular.ttf') format('truetype');
   color: #c71820;
 }
 
+.gared {
+  color: #c71820;
+  text-align: center;
+  margin: 10px auto;
+}
+
 .badge-color-student {
   background-color: #c71820;
   vertical-align: -1px;
@@ -271,6 +277,8 @@ display: block;
 .createpost_button {
   margin-top: 10px;
   margin-bottom: 5px;
+  margin-left: 150px;
+  width: 50%;
 }
 
 // -- View post
@@ -288,7 +296,6 @@ display: block;
   padding-bottom: 0;
 }
 
-
 // -- Navigation!!
 
 .nav_bar {
@@ -301,7 +308,7 @@ display: block;
 }
 
 .main-nav {
-  margin-left: 554px;
+  margin-left: 790px;
   display: inline;
   padding-right: 0;
   width: 500px;
@@ -349,10 +356,10 @@ color: black;
   margin-left: 10px;
 }
 
-.nav_logo_spin img {
-  transition: 1s ease-in-out;
-}
-.nav_logo_spin img:hover {
-  transition: 1s ease-in-out;
-  transform: rotate(90deg);
-}
+// .nav_logo_spin img {
+//   transition: 1s ease-in-out;
+// }
+// .nav_logo_spin img:hover {
+//   transition: 1s ease-in-out;
+//   transform: rotate(90deg);
+// }

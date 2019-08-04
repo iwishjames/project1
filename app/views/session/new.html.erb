@@ -3,12 +3,13 @@
   <%= image_tag("xplogo.png", :alt => "XP logo", :height => "50px") %>
 </div>
 
-<p class="image alert_message">
-  <%= flash[:error_message] %>
-</p>
 
-<div class="signup_mainContainer">
-<div class="signup_container">
+<div class="image alert_message gared">
+  <%= flash[:error_message] %>
+</div>
+
+<div class="login_mainContainer">
+<div class="login_container">
 <h3>Sign In</h3>
 
   <%= form_tag login_path do %>
@@ -25,9 +26,14 @@
 <% end %>
 <p class ="signin_text">New to XP? <a href="<%= new_user_path %>">Create an account.</a> </p>
 </div>
+  <div class="image_container">
     <%= image_tag("student.jpg", :alt => "image of student", :height => "560")%>
+    <div class="bottom-left">Welcome to XP!</div>
+    <div class="bottom-left-small">Your GA Experience shared...</div>
+  </div>
 </div>
 <% end %>
+
 
 <% if @current_user.present? %>
 <div class="login_silly">

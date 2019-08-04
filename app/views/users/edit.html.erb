@@ -1,39 +1,65 @@
-<h1>Edit User</h1>
 
-<%= form_for @user, :html => {:multipart => true} do |f|%>
+<div class="profile_edit_page">
+  <div class="margin_fixup">
+  <h3>Edit Profile</h3>
+  <%= form_for @user, :html => {:multipart => true} do |f|%>
 
-  <%= f.label :cl_image, "Update Profile Picture" %>
-  <%= f.cl_image_upload :image %>
+  <div class="form-row">
+    <div class="form-group col-md-5">
+    <span class="required_red">* </span><%= f.label :first_name %>
+    <%= f.text_field :first_name, :class=> "form-control", required: true %>
+    </div>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+    <div class="form-group col-md-5">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, :class=> "form-control" %>
+    </div>
+  </div>
 
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
+  <div class="form-group edit_input_width">
+  <span class="required_red">* </span><%= f.label :email %>
+  <%= f.email_field :email, :class=> "form-control", required: true %>
+  </div>
 
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-
+  <div class="form-group">
   <%= f.label :role_type %>
-  <%= f.select :role_type, [ "Student", "Alumni", "Staff", "Outcomes" ] %>
+  <div><%= f.select :role_type, [ "Student", "Alumni", "Staff", "Outcomes" ] %></div>
+  </div>
 
-  <%= f.label :student_class %>
-  <%= f.text_field :student_class, :class=>"text_capitalise" %>
+  <div class="form-row">
+    <div class="form-group col-md-5">
+    <span class="required_red">* </span><%= f.label :student_class %>
+    <%= f.text_field :student_class, :class=>"text_capitalise form-control", required: true %>
+    </div>
 
-  <%= f.label :mentor_class, "Mentoring Class" %>
-  <%= f.text_field :mentor_class, :class=>"text_capitalise" %>
+    <div class="form-group col-md-5">
+    <%= f.label :mentor_class, "Mentoring Class" %>
+    <%= f.text_field :mentor_class, :class=>"text_capitalise form-control" %>
+    </div>
+  </div>
 
-  <%= f.label :start_date %>
-  <%= f.date_field :start_date %>
 
-  <%= f.label :network_github %>
-  <%= f.text_field :network_github %>
+  <div class="form-group">
+  <%= f.label :cl_image, "Profile Picture" %>
+  <div><%= f.cl_image_upload :image, :class=> "form-control-file" %></div>
+  </div>
 
-  <%= f.label :network_linkedin %>
-  <%= f.text_field :network_linkedin %>
+  <div class="form-group edit_input_width">
+  <%= f.label :network_github, "github.com/" %>
+  <%= f.text_field :network_github, :class=> "form-control" %>
+  </div>
 
-  <%= f.label :network_twitter %>
-  <%= f.text_field :network_twitter %>
+  <div class="form-group edit_input_width">
+  <%= f.label :network_linkedin, "linkedin.com/in/" %>
+  <%= f.text_field :network_linkedin, :class=> "form-control" %>
+  </div>
 
-  <%= f.submit "Update profile" %>
-<% end %>
+  <div class="form-group edit_input_width">
+  <%= f.label :network_twitter, "twitter.com/" %>
+  <%= f.text_field :network_twitter, :class=> "form-control" %>
+  </div>
+
+  <%= f.submit "Update Profile", :class=>"btn createpost_button btn-primary updateprofile_button" %>
+  <% end %>
+  </div>
+</div>
