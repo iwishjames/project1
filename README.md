@@ -1,44 +1,17 @@
-# README
+# Project 1: Databases - XP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Link to the website:**
+https://gaxp.herokuapp.com
 
-Things you may want to cover:
+The Problem: New students (starting at GA) crave the valuable insights from the experienced students. 
+However, this wealth of knowledge lost as the student turn over cycle means that as one class starts, another is finishing
 
-* Ruby version
+My Solution: I wanted to create a forum/twitter/slack/memepage that could hold information, A Community knowledge base of Tools, Tips, and Experiences from the General Assembly.
 
-* System dependencies
+This website was built using Ruby on Rails and also uses Bootstrap and hosting by Heroku.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Special Thanks
-- Rashida - being amazing!
-- Mee - correcting my syntax!
-- Victor - troubleshooting guru! - hidden_field!!!!
-- Ludo - explanations and teaching
-- Gopi - testing and advice
-- Paulina - like feature
-
-Technology
-- hosting - heroku
-- ruby on rails
-- bootstrap
-- gem pry, gem
-
-Features
+----
+## Features:
 - Highlights classmates's post in Red
 - Highlights own post in green
 - Tells you if poster is student, alumni, staff or outcomes
@@ -47,8 +20,39 @@ Features
 - points system for user information creditation - more points means information provided by user has helped more people!
 - link to user social media accounts!
 
+## Screenshots:
+![Login Page](/images/login.png)
+![Silly Login](/images/sillylogin.png)
+![Profile Page](/images/profile.png)
+![New post](/images/newpost.png)
+![Your post](/images/yourpost.png)
 
-TO DO!
+
+## *Special Thanks*
+- [@Rashida (TA)](https://github.com/rashidabengali) - Being amazing and help with crud system!
+- [@Mee!](https://github.com/Ratsamee) - Helping me correct my syntax!
+- [@Victor](https://github.com/victorzw895) - Troubleshooting guru! - let me know about the hidden_field option gathering data from forums.
+- [@Ludo](https://github.com/lpinzari) - Explanations and teachings on the crud system - So I could clearly understand what I was doing
+- [@Gopi](https://github.com/gopipatell) - Testing and user experience advice
+- [@Paulina](https://github.com/pkijowska) - Wouldn't have the points/like feature without her!
+
+
+## Crud Mapping:
+![Crud Map](/images/crudmap.png)
+
+## Challenges:
+- Understanding the crud system and troubleshooting. I think it helps to break it down as the triangle of Routes, Controllers, Views.
+- Time Management - I think I need to better work on my time management so that I actually spend more time making the product than just planning and making it look nice. I also found that actually getting started enabled you to solve a lot of issues that you can have in planning.
+
+
+## Lessons learnt:
+- Don't have to always have to code something in. Sometimes, it is nice to keep it clean or have as feature shown visually.
+- Bootstrap is pretty amazing! - good idea to follow a simple and easy to understand naming system.
+- Again the importance of usability and keeping in mind the user base.
+___
+
+## Feature Freeze:
 - Search functionality!!!!!
 - Comments section
-- Adjust image crop for photo uploads. 
+- Adjust image crop for photo uploads.
+- Classmates - a page with cards with social network links for your classmates.
