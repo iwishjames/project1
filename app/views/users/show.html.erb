@@ -1,53 +1,53 @@
 <div class="card mb-3 profile_card" style="max-width: 600px;">
   <div class="row no-gutters">
     <div class="col-md-4">
-      <% if @current_user.image? %>
-      <%= cl_image_tag @current_user.image, :height=>"265px", :class=>"card-img object_fit_profile_card_image" %>
+      <% if @user.image? %>
+      <%= cl_image_tag @user.image, :height=>"265px", :class=>"card-img object_fit_profile_card_image" %>
       <% end %>
     </div>
     <div class="col-md-8">
       <div class="card-body profile_list_spacing">
         <h5 class="card-title">
-          <%= @current_user.first_name %>
-          <%= @current_user.last_name %>
+          <%= @user.first_name %>
+          <%= @user.last_name %>
         </h5>
         <span p_list_spacing>
-        <p class="card-text"><span class="badge-warning xp_badge"><span class="bold">Total XP: <%= @current_user.points.count %></span></span></p>
+        <p class="card-text"><span class="badge-warning xp_badge"><span class="bold">Total XP: <%= @user.points.count %></span></span></p>
         <p class="card-text">
           <small class="text-muted">
-            <span class="profile_label">Total posts:</span> <%= (@current_user.posts.count) == 0 ? 0 : @current_user.posts.count %> |
+            <span class="profile_label">Total posts:</span> <%= (@user.posts.count) == 0 ? 0 : @user.posts.count %> |
             <span class="profile_label">Total Comments:</span> 0
           </small>
         </p>
         <div class="p_list_spacing">
-          <p class="card-text"><span class="profile_label">Role:</span> <%= @current_user.role_type %></p>
-          <p class="card-text"><span class="profile_label">Email:</span> <%= @current_user.email %></p>
+          <p class="card-text"><span class="profile_label">Role:</span> <%= @user.role_type %></p>
+          <p class="card-text"><span class="profile_label">Email:</span> <%= @user.email %></p>
           <p class="card-text">
-            <% if @current_user.student_class? %>
-            <span class="profile_label">My Class:</span> <span class="text_capitalise"><%= @current_user.student_class %></span>
+            <% if @user.student_class? %>
+            <span class="profile_label">My Class:</span> <span class="text_capitalise"><%= @user.student_class %></span>
             <% end %>
 
-            <% if @current_user.mentor_class? %>
-            <span class="profile_label">· Mentoring Class:</span> <%= @current_user.mentor_class %>
+            <% if @user.mentor_class? %>
+            <span class="profile_label">· Mentoring Class:</span> <%= @user.mentor_class %>
             <% end %>
           </p>
         </div>
         <div class="p_list_spacing">
         <p class="word_spacing">
-          <% if @current_user.network_github? %>
-          <a href="https://github.com/<%= @current_user.network_github%>" class="bold badge_github xp_badge" target="_blank">GitHub</a>
+          <% if @user.network_github? %>
+          <a href="https://github.com/<%= @user.network_github%>" class="bold badge_github xp_badge" target="_blank">GitHub</a>
           <% else %>
           <span class="badge_disabled bold xp_badge">GitHub</span>
           <% end %>
 
-          <% if @current_user.network_linkedin? %>
-          <a href="https://www.linkedin.com/in/<%= @current_user.network_linkedin%>" class="bold badge_linkedin xp_badge" target="_blank">LinkedIn</a>
+          <% if @user.network_linkedin? %>
+          <a href="https://www.linkedin.com/in/<%= @user.network_linkedin%>" class="bold badge_linkedin xp_badge" target="_blank">LinkedIn</a>
           <% else %>
           <span class="badge_disabled bold xp_badge">LinkedIn</span>
           <% end %>
 
-          <% if @current_user.network_twitter? %>
-          <a href="https://twitter.com/<%= @current_user.network_twitter%>" class="bold badge_twitter xp_badge" target="_blank">Twitter</a>
+          <% if @user.network_twitter? %>
+          <a href="https://twitter.com/<%= @user.network_twitter%>" class="bold badge_twitter xp_badge" target="_blank">Twitter</a>
           <% else %>
           <span class="badge_disabled bold xp_badge">Twitter</span>
           <% end %>
@@ -56,9 +56,9 @@
     </div>
   </div>
   <div class="card-body text_align_center profile_card_bottom list-group profile_card_line">
-        <!-- <span class="gared"><%= link_to "Delete account", @current_user, :method => 'delete', :data => {:confirm => "Are you sure? \n\nIf this is your good bye, We are sad to see you leave... \n\nThank you for your contribution to XP! You had made X amount of posts, which had a total of Y comments - your final XP is Z. \n\nAll the best to wherever you go and whatever awesome things you do, we hope to meet you again!"} %></span> -->
+        <!-- <span class="gared"><%= link_to "Delete account", @user, :method => 'delete', :data => {:confirm => "Are you sure? \n\nIf this is your good bye, We are sad to see you leave... \n\nThank you for your contribution to XP! You had made X amount of posts, which had a total of Y comments - your final XP is Z. \n\nAll the best to wherever you go and whatever awesome things you do, we hope to meet you again!"} %></span> -->
   <%# · %>
-    <%= link_to "Edit details", edit_user_path(@current_user) %>
+    <%= link_to "Edit details", edit_user_path(@user) %>
 </div>
 </div>
 
@@ -113,7 +113,7 @@
       </span>
       <span class="text-alignment2">
         <p class="custom_card_footer">
-          <% if post.user_id == @current_user.id %>
+          <% if post.user_id == @user.id %>
           <span><%= link_to "Edit post", edit_post_path(post.id)%> ·</span>
           <% end %>
           <%= link_to "View post", post_path(post.id) %>

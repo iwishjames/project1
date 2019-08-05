@@ -58,9 +58,9 @@
     </div>
     <div class="col-md-8">
       <div class="card-body profile_list_spacing">
-        <h5 class="card-title">
-          <%= @post.user.first_name %>
-          <%= @post.user.last_name %>
+        <h5 class="card-title card_title_custom">
+          <%= @post.user.first_name.capitalize %>
+          <%= @post.user.last_name.capitalize %>
         </h5>
         <span p_list_spacing>
         <p class="card-text"><span class="badge-warning xp_badge"><span class="bold">Total XP: <%= @post.user.points.count %></span></span></p>
@@ -82,7 +82,7 @@
           </p>
         </div>
         <div class="p_list_spacing">
-        <p class="word_spacing">
+        <p class="word_spacing w_spacing_margin">
           <% if @post.user.network_github? %>
           <a href="https://github.com/<%= @post.user.network_github%>" class="bold badge_github xp_badge" target="_blank">GitHub</a>
           <% else %>
