@@ -21,11 +21,11 @@ This website was built using Ruby on Rails and also uses Bootstrap and hosting b
 - link to user social media accounts!
 
 ## Screenshots:
-![Login Page](/images/login.png)
-![Silly Login](/images/sillylogin.png)
-![Profile Page](/images/profile.png)
-![New post](/images/newpost.png)
-![Your post](/images/yourpost.png)
+![Login Page](/app/assets/images/login.png)
+![Silly Login](/app/assets/images/sillylogin.png)
+![Profile Page](/app/assets/images/profile.png)
+![New post](/app/assets/images/newpost.png)
+![Your post](/app/assets/images/yourpost.png)
 
 
 ## *Special Thanks*
@@ -38,7 +38,7 @@ This website was built using Ruby on Rails and also uses Bootstrap and hosting b
 
 
 ## Crud Mapping:
-![Crud Map](/images/crudmap.png)
+![Crud Map](/app/assets/images/crudmap.png)
 
 ## Challenges:
 - Understanding the crud system and troubleshooting. I think it helps to break it down as the triangle of Routes, Controllers, Views.
@@ -56,4 +56,4 @@ ___
 - Comments section
 - Adjust image crop for photo uploads.
 - Classmates - a page with cards with social network links for your classmates.
-- Ability to view profile pages of other students and see just their posts. 
+- Ability to view profile pages of other students and see just their posts.
