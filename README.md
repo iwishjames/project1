@@ -1,4 +1,4 @@
-# Project 1: Databases - XP
+# Project 1 (Databases): XP
 
 **Link to the website:**
 https://gaxp.herokuapp.com
@@ -8,7 +8,9 @@ However, this wealth of knowledge lost as the student turn over cycle means that
 
 My Solution: I wanted to create a forum/twitter/slack/memepage that could hold information, A Community knowledge base of Tools, Tips, and Experiences from the General Assembly.
 
-This website was built using Ruby on Rails and also uses Bootstrap and hosting by Heroku.
+XP stands for Experience. In gaming terms it also stands for Experience Points. By using XP I am refering to both of these.
+
+This website was built using Ruby on Rails. It also uses Bootstrap for CSS and Heroku for hosting.
 
 ----
 ## Features:
@@ -21,10 +23,15 @@ This website was built using Ruby on Rails and also uses Bootstrap and hosting b
 - link to user social media accounts!
 
 ## Screenshots:
+Login Page
 ![Login Page](/app/assets/images/login.png)
+Accessing Login page after sign in.
 ![Silly Login](/app/assets/images/sillylogin.png)
+User Profile page, which also displays all their posts.
 ![Profile Page](/app/assets/images/profile.png)
+Page to create a new post.
 ![New post](/app/assets/images/newpost.png)
+All posts page - Green highlight on posts made by you.
 ![Your post](/app/assets/images/yourpost.png)
 
 
