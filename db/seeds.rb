@@ -6,7 +6,7 @@ u3 = User.create :first_name => "Hannah", :last_name => "Staff", :email => "staf
 u4 = User.create :first_name => "Shane", :last_name => "Outcomes", :email => "outcomes@ga.co", :password => 'chicken', :role_type => "Outcomes", :image => "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg"
 u5 = User.create :first_name => "Pooch", :email => "pooch@ga.co", :password => 'chicken', :role_type => "Staff"
 u6 = User.create :first_name => "Admin", :email => "admin@ga.co", :password => 'chicken', :role_type => "Staff", :image => "https://ga-core.s3.amazonaws.com/production/uploads/instructor/image/1051/thumb_joel.jpg", :admin => true
-u7 = User.create :first_name => "Ludovico", :email => "ludo@ga.co", :password => 'chicken', :role_type => "Student", :student_class => "SEI33", :network_github=>"lpinzari", :network_linkedin=>"ludovico-pinzar", :network_twitter=>"LudovicoPinzari"
+u7 = User.create :first_name => "Ludovico", :email => "ludo@ga.co", :password => 'chicken', :role_type => "Student", :student_class => "SEI33", :network_github=>"lpinzari", :network_linkedin=>"ludovico-pinzari", :network_twitter=>"LudovicoPinzari"
 
 puts "Done!👌"
 

@@ -73,7 +73,9 @@
         <div class="p_list_spacing">
           <p class="card-text"><span class="profile_label">Role:</span> <%= @post.user.role_type %></p>
           <p class="card-text">
+            <% if @post.user.student_class? %>
             <span class="profile_label">My Class:</span> <span class="text_capitalise"><%= @post.user.student_class %></span>
+            <% end %>
             <% if @post.user.mentor_class? %>
             <span class="profile_label">· Mentoring Class:</span> <%= @post.user.mentor_class %>
             <% end %>
