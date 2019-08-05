@@ -14,13 +14,13 @@ This website was built using Ruby on Rails. It also uses Bootstrap for CSS and H
 
 ----
 ## Features:
-- Highlights classmates's post in Red
-- Highlights own post in green
 - Tells you if poster is student, alumni, staff or outcomes
-- hashtags
-- date created, date updated for information validity
-- points system for user information creditation - more points means information provided by user has helped more people!
-- link to user social media accounts!
+- Date created, date updated for information validity
+- Highlights classmates' posts in Red
+- Highlights own post in Green
+- Points system for post credibility - more points means information provided by user has helped more people!
+- Uses styling reference from GA brand guidelines
+- Easy to use design. 
 
 ## Screenshots:
 Login Page

@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-
   def create
     @user = User.new user_params # Set up the user but don't save yet.
     if params[:file].present?

@@ -17,9 +17,7 @@
 <div class="card-footer post_show_cardfooter">
     <p class="text-center"><% if @current_user != @post.user %>
     <span class="text-muted text_shrink">
-    Did you find this post by <u><%= @post.user.first_name %>
-    <%=@post.user.last_name.chars.first%></u>
-    helpful? Give it some XP!
+    Liked this post by <%= @post.user.first_name %>? Give it some XP!
     </span>
     </p>
       <span>
@@ -45,3 +43,64 @@
 </div>
 <!-- <p>comment section below  -- points and comments counter</p> -->
 </div>
+
+
+
+<% if @post.user != @current_user %>
+
+<!-- Poster Profile -->
+<div class="card mb-3 profile_card_posts" style="max-width: 700px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <% if @post.user.image? %>
+      <%= cl_image_tag @post.user.image, :height=>"265px", :class=>"card-img object_fit_profile_card_image" %>
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body profile_list_spacing">
+        <h5 class="card-title">
+          <%= @post.user.first_name %>
+          <%= @post.user.last_name %>
+        </h5>
+        <span p_list_spacing>
+        <p class="card-text"><span class="badge-warning xp_badge"><span class="bold">Total XP: <%= @post.user.points.count %></span></span></p>
+        <p class="card-text">
+          <small class="text-muted">
+            <span class="profile_label">Total posts:</span> <%= (@post.user.posts.count) == 0 ? 0 : @post.user.posts.count %> |
+            <span class="profile_label">Total Comments:</span> 0
+          </small>
+        </p>
+        <div class="p_list_spacing">
+          <p class="card-text"><span class="profile_label">Role:</span> <%= @post.user.role_type %></p>
+          <p class="card-text">
+            <span class="profile_label">My Class:</span> <span class="text_capitalise"><%= @post.user.student_class %></span>
+            <% if @post.user.mentor_class? %>
+            <span class="profile_label">· Mentoring Class:</span> <%= @post.user.mentor_class %>
+            <% end %>
+          </p>
+        </div>
+        <div class="p_list_spacing">
+        <p class="word_spacing">
+          <% if @post.user.network_github? %>
+          <a href="https://github.com/<%= @post.user.network_github%>" class="bold badge_github xp_badge" target="_blank">GitHub</a>
+          <% else %>
+          <span class="badge_disabled bold xp_badge">GitHub</span>
+          <% end %>
+
+          <% if @post.user.network_linkedin? %>
+          <a href="https://www.linkedin.com/in/<%= @post.user.network_linkedin%>" class="bold badge_linkedin xp_badge" target="_blank">LinkedIn</a>
+          <% else %>
+          <span class="badge_disabled bold xp_badge">LinkedIn</span>
+          <% end %>
+
+          <% if @post.user.network_twitter? %>
+          <a href="https://twitter.com/<%= @post.user.network_twitter%>" class="bold badge_twitter xp_badge" target="_blank">Twitter</a>
+          <% else %>
+          <span class="badge_disabled bold xp_badge">Twitter</span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
