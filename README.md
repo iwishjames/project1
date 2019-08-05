@@ -56,3 +56,4 @@ ___
 - Comments section
 - Adjust image crop for photo uploads.
 - Classmates - a page with cards with social network links for your classmates.
+- Ability to view profile pages of other students and see just their posts. 
