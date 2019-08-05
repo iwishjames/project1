@@ -23,7 +23,10 @@
           <p class="card-text"><span class="profile_label">Role:</span> <%= @current_user.role_type %></p>
           <p class="card-text"><span class="profile_label">Email:</span> <%= @current_user.email %></p>
           <p class="card-text">
+            <% if @current_user.student_class? %>
             <span class="profile_label">My Class:</span> <span class="text_capitalise"><%= @current_user.student_class %></span>
+            <% end %>
+
             <% if @current_user.mentor_class? %>
             <span class="profile_label">· Mentoring Class:</span> <%= @current_user.mentor_class %>
             <% end %>
