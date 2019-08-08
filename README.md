@@ -3,6 +3,12 @@
 **Link to the website:**
 https://gaxp.herokuapp.com
 
+I recommend creating your own account, but for a quick browse, feel free to use the following account: 
+
+email: guest@ga.com
+password: gue5t
+
+----
 The Problem: New students (starting at GA) crave the valuable insights from the experienced students. 
 However, this wealth of knowledge lost as the student turn over cycle means that as one class starts, another is finishing
 
