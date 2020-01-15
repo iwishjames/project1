@@ -1,7 +1,7 @@
 # Project 1 (Databases): XP
 
 **Link to the website:**
-https://gaxp.herokuapp.com
+[gaxp](https://gaxp.herokuapp.com) [Note: Herokuapp can be slow on first load]
 
 I recommend creating your own account, but for a quick browse, feel free to use the following account: 
 
